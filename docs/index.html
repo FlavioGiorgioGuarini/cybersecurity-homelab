@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12101a">
+    <meta name="description" content="Run local defensive security analyses across ten workflows using your own event records or the bundled synthetic fixtures.">
+    <title>Signal Homelab — Defensive security workbench</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.mjs"></script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#labs">Skip to the tool library</a>
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Signal<span class="brand-secondary"> Homelab</span></span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="#labs">Tool library</a>
+          <a href="#method">How it works</a>
+        </nav>
+        <span class="environment"><i aria-hidden="true"></i> Browser-local analysis</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero content-width" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="label hero-label"><span aria-hidden="true"></span> Defensive security workbench</p>
+          <h1 id="page-title">Follow the <br>signal<span>.</span></h1>
+          <p class="hero-description">Analyze defensive evidence with ten browser-local tools. Trace each finding to its source and export the results.</p>
+          <a class="button button-primary hero-link" href="#labs">Explore the tools <span aria-hidden="true">↗</span></a>
+        </div>
+        <figure class="signal-field">
+          <figcaption>
+            <span class="field-title">Telemetry field</span>
+            <span id="scene-caption" class="field-caption">Synthetic event constellation</span>
+          </figcaption>
+          <canvas id="signal-canvas" aria-label="Interactive 3D telemetry field" aria-describedby="scene-help" role="img" tabindex="0"></canvas>
+          <div class="field-controls">
+            <span id="scene-help">Drag or use arrow keys to orbit</span>
+            <button class="button button-quiet field-button" id="motion-toggle" type="button" aria-pressed="false">Pause rotation</button>
+          </div>
+        </figure>
+      </section>
+
+      <section id="labs" class="workspace-section" aria-labelledby="library-title">
+        <div class="content-width">
+          <header class="section-heading">
+            <div>
+              <h2 id="library-title">Tool library</h2>
+              <p>Choose a workflow and evaluate sample records or your own evidence.</p>
+            </div>
+            <div class="progress-summary">
+              <label for="lab-progress" id="progress-label">Practice progress</label>
+              <div class="progress-track">
+                <progress id="lab-progress" value="0" max="10"></progress>
+                <span id="progress-text">0 of 10 complete</span>
+              </div>
+            </div>
+          </header>
+          <div class="workbench">
+            <aside class="lab-index" aria-label="Choose a tool">
+              <div class="lab-index-top">
+                <label class="search-label" for="lab-search">Find a tool</label>
+                <div class="search-frame">
+                  <span class="search-icon" aria-hidden="true"></span>
+                  <input id="lab-search" type="search" placeholder="Search tools" autocomplete="off">
+                </div>
+                <p class="search-summary" id="lab-count" aria-live="polite"></p>
+              </div>
+              <ul id="lab-list" class="lab-list"></ul>
+              <div class="lab-index-bottom">
+                <button class="button button-quiet reset-button" id="reset-progress" type="button" disabled>Reset progress</button>
+              </div>
+            </aside>
+
+            <article id="lab-workspace" class="lab-workspace" aria-labelledby="lab-title">
+              <header class="lab-header" id="lab-header">
+                <p id="lab-category" class="label lab-category"></p>
+                <h3 id="lab-title" tabindex="-1">Choose a tool</h3>
+                <p id="lab-summary" class="lab-summary"></p>
+                <div class="objective">
+                  <span>Objective</span>
+                  <p id="lab-objective"></p>
+                </div>
+              </header>
+
+              <section class="dataset panel" aria-labelledby="dataset-title">
+                <div class="dataset-copy">
+                  <h4 id="dataset-title">Evidence input</h4>
+                  <p class="muted" id="dataset-summary" role="status">Built-in synthetic records are selected.</p>
+                </div>
+                <div class="dataset-controls">
+                  <button class="button button-secondary" id="import-trigger" type="button" aria-describedby="input-help">Import JSON / JSONL</button>
+                  <input id="dataset-input" type="file" accept=".json,.jsonl,.ndjson,application/json,application/x-ndjson" hidden>
+                  <button class="button button-quiet" id="sample-reset" type="button" hidden>Use sample data</button>
+                </div>
+                <p id="input-help" class="muted dataset-help">Select a local file up to 1 MB. Its records stay in this browser tab.</p>
+                <button class="text-button" id="download-sample" type="button">Download example input <span aria-hidden="true">↓</span></button>
+                <p id="input-error" class="input-error" role="alert" hidden></p>
+              </section>
+
+              <section class="evidence panel" aria-labelledby="evidence-title">
+                <div class="panel-header">
+                  <div>
+                    <h4 id="evidence-title">Event evidence</h4>
+                    <p id="event-summary" class="muted"></p>
+                  </div>
+                  <button class="button button-primary evaluate-button" id="evaluate" type="button" aria-controls="evaluation">
+                    Evaluate evidence <span aria-hidden="true">↗</span>
+                  </button>
+                </div>
+                <div id="severity-chart" class="severity-chart"></div>
+                <ol id="events" class="event-list" aria-label="Event records"></ol>
+              </section>
+
+              <section id="evaluation" class="panel results" aria-labelledby="results-title" hidden>
+                <div class="panel-header">
+                  <div>
+                    <h4 id="results-title" tabindex="-1">Evaluation</h4>
+                    <p class="muted">Findings cite the events that support them.</p>
+                  </div>
+                  <div class="report-controls" aria-label="Report exports">
+                    <button class="button button-quiet" id="export-json" type="button">Download JSON</button>
+                    <button class="button button-quiet" id="export-markdown" type="button">Download Markdown</button>
+                  </div>
+                </div>
+                <dl id="metrics" class="metrics"></dl>
+                <ul id="findings" class="findings"></ul>
+              </section>
+
+              <form id="decision-form" class="panel decision">
+                <fieldset>
+                  <legend>Practice decision</legend>
+                  <p id="decision-prompt"></p>
+                  <div id="choices" class="choices"></div>
+                  <button class="button button-secondary" id="check-decision" type="submit" disabled>Check decision</button>
+                </fieldset>
+                <p id="decision-feedback" class="feedback" role="status" hidden></p>
+              </form>
+              <p id="workspace-status" class="sr-only" aria-live="polite"></p>
+            </article>
+          </div>
+          <noscript><p class="noscript">JavaScript is needed to run the workbench. The <a href="./labs.mjs">synthetic fixtures</a> are available as source.</p></noscript>
+        </div>
+      </section>
+
+      <section class="method content-width" id="method" aria-labelledby="method-title">
+        <h2 id="method-title">How it works</h2>
+        <div class="method-copy">
+          <p>Each tool runs in this page. Start with sample records or import your own JSON or JSONL for a local evaluation. Findings link back to the cited events, and reports can be downloaded as JSON or Markdown.</p>
+          <p>Imported evidence stays in this browser tab. Practice completion is saved separately in browser storage and can be reset from the tool library.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer content-width">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Signal Homelab</span>
+      </a>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
+</html>
