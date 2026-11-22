@@ -1,0 +1,32 @@
+name: Signal tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'tools/**'
+      - 'tests/**'
+      - '.github/workflows/signal-checks.yml'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'tools/**'
+      - 'tests/**'
+      - '.github/workflows/signal-checks.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Run the security product and prompt tests
+        run: node --test tests/*.test.mjs
+      - name: Evaluate all ten products through the CLI
+        run: node tools/signal.mjs run --all > /tmp/signal-reports.json
