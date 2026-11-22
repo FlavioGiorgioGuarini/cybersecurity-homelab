@@ -7,9 +7,6 @@ from collections import defaultdict
 from typing import List, Dict
 from dataclasses import dataclass
 from enum import Enum
-from colorama import Fore, Style, init
-
-init(autoreset=True)
 
 class AlertSeverity(Enum):
     CRITICAL = 9.0
@@ -53,32 +50,45 @@ class IDSParser:
         self.events: List[SIEMEvent] = []
     
     def parse_suricata(self, log_data: str) -> List[SIEMEvent]:
-        """Parse Suricata JSON logs"""
+        """Convert Suricata EVE alert records into SIEM events."""
         events = []
-        for line in log_data.strip().split('\n'):
+        for line in log_data.split('\n'):
             try:
                 log_entry = json.loads(line)
-                if 'alert' in log_entry and 'src_ip' in log_entry:
-                    severity = self.SEVERITY_MAP.get(
-                        log_entry['alert'].get('signature_id', 0) % 10, 0.1
-                    )
-                    event = SIEMEvent(
-                        timestamp=log_entry.get('timestamp'),
-                        source_ip=log_entry.get('src_ip'),
-                        dest_ip=log_entry.get('dest_ip'),
-                        source_port=log_entry.get('src_port', 0),
-                        dest_port=log_entry.get('dest_port', 0),
-                        protocol=log_entry.get('proto', 'unknown'),
-                        alert_name=log_entry['alert'].get('signature'),
-                        alert_id=log_entry['alert'].get('signature_id', 0),
-                        severity=severity,
-                        raw_log=line,
-                        event_type='IDS',
-                        metadata=log_entry
-                    )
-                    events.append(event)
             except json.JSONDecodeError:
                 continue
+            if not isinstance(log_entry, dict):
+                continue
+            alert = log_entry.get('alert')
+            source_ip = log_entry.get('src_ip')
+            if not isinstance(alert, dict) or not isinstance(source_ip, str) or not source_ip:
+                continue
+
+            signature_id = alert.get('signature_id', 0)
+            if type(signature_id) is not int:
+                continue
+            signature = alert.get('signature')
+            if not isinstance(signature, str) or not signature.strip():
+                signature = 'Suricata alert'
+            priority = alert.get('severity')
+            severity = AlertSeverity.LOW.value
+            if type(priority) is int:
+                severity = self.SEVERITY_MAP.get(priority, severity)
+
+            events.append(SIEMEvent(
+                timestamp=log_entry.get('timestamp'),
+                source_ip=source_ip,
+                dest_ip=log_entry.get('dest_ip'),
+                source_port=log_entry.get('src_port', 0),
+                dest_port=log_entry.get('dest_port', 0),
+                protocol=log_entry.get('proto', 'unknown'),
+                alert_name=signature,
+                alert_id=signature_id,
+                severity=severity,
+                raw_log=line,
+                event_type='IDS',
+                metadata=log_entry,
+            ))
         self.events.extend(events)
         return events
     
@@ -223,4 +233,7 @@ class LogAnalyzer:
             return {'error': str(e)}
 
 if __name__ == '__main__':
+    from colorama import Fore, Style, init
+
+    init(autoreset=True)
     print(f"{Fore.CYAN}[*] SOC Log Analyzer Ready{Style.RESET_ALL}")

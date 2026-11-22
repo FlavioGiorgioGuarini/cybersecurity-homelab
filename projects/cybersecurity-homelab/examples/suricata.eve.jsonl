@@ -1,0 +1,3 @@
+{"timestamp":"2026-01-01T10:00:00Z","event_type":"alert","src_ip":"192.0.2.10","dest_ip":"198.51.100.20","src_port":52100,"dest_port":443,"proto":"TCP","alert":{"signature_id":9000007,"signature":"Synthetic lab alert A","severity":1}}
+{"timestamp":"2026-01-01T10:00:10Z","event_type":"flow","src_ip":"192.0.2.10","dest_ip":"198.51.100.20","src_port":52100,"dest_port":443,"proto":"TCP"}
+{"timestamp":"2026-01-01T10:00:20Z","event_type":"alert","src_ip":"192.0.2.10","dest_ip":"198.51.100.20","src_port":52102,"dest_port":443,"proto":"TCP","alert":{"signature_id":9000017,"signature":"Synthetic lab alert B","severity":2}}
