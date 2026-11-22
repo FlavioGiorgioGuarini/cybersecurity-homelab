@@ -1,0 +1,31 @@
+name: Offline SOC tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/soc-tests.yml'
+      - 'projects/cybersecurity-homelab/csf/soc/**'
+      - 'projects/cybersecurity-homelab/examples/suricata.eve.jsonl'
+      - 'projects/cybersecurity-homelab/tests/test_suricata.py'
+  pull_request:
+    paths:
+      - '.github/workflows/soc-tests.yml'
+      - 'projects/cybersecurity-homelab/csf/soc/**'
+      - 'projects/cybersecurity-homelab/examples/suricata.eve.jsonl'
+      - 'projects/cybersecurity-homelab/tests/test_suricata.py'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Run the offline Suricata tests
+        working-directory: projects/cybersecurity-homelab
+        run: python3 -m unittest discover -s tests -p test_suricata.py -v
