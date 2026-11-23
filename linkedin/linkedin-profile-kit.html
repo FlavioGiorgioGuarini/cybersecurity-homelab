@@ -1,0 +1,1458 @@
+<title>Guarini LinkedIn Kit</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#F7F8FB;--ink:#111827;--mute:#5B6478;--line:#D9DEE8;--card:#FFFFFF;--acc:#0F3F7A;--acc2:#12A58A;--tabbg:#EDF0F6;--sel:#DCE9FF}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0B1220;--ink:#E6ECF7;--mute:#9AA8C2;--line:#233252;--card:#111B2E;--acc:#8FBBFF;--acc2:#5EE7C4;--tabbg:#141F35;--sel:#1B2E52}}
+:root[data-theme="dark"]{--bg:#0B1220;--ink:#E6ECF7;--mute:#9AA8C2;--line:#233252;--card:#111B2E;--acc:#8FBBFF;--acc2:#5EE7C4;--tabbg:#141F35;--sel:#1B2E52}
+body{background:var(--bg);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:980px;margin:0 auto;padding:40px 24px 80px}
+header h1{font-family:Sora,system-ui,sans-serif;font-weight:700;font-size:34px;letter-spacing:-.01em;margin:0;text-wrap:balance}
+header p{color:var(--mute);margin:8px 0 0;max-width:65ch}
+.note{border-left:3px solid var(--acc2);padding:10px 16px;margin:24px 0;background:var(--card);color:var(--mute);font-size:15px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:28px 0 20px;position:sticky;top:0;background:var(--bg);padding:10px 0;z-index:2}
+.tab{font-family:Sora,system-ui,sans-serif;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--tabbg);color:var(--ink);padding:8px 14px;border-radius:6px;cursor:pointer}
+.tab em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;color:var(--acc2);margin-left:8px}
+.tab.on{background:var(--sel);border-color:var(--acc)}
+.tab:focus-visible,.copy:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+h2{font-family:Sora,system-ui,sans-serif;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin:40px 0 12px;font-weight:600}
+.entry{border-top:1px solid var(--line);padding-top:12px;margin-top:16px}
+.field{margin:10px 0}
+.fhead{display:flex;align-items:center;gap:12px;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--mute)}
+.flabel{letter-spacing:.08em;text-transform:uppercase}
+.count{margin-left:auto;font-variant-numeric:tabular-nums} .lim{opacity:.6}
+.copy{font-family:Sora,system-ui,sans-serif;font-size:12px;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--acc);padding:4px 10px;border-radius:4px;cursor:pointer}
+.copy.done{color:var(--acc2);border-color:var(--acc2)}
+.val{white-space:pre-wrap;word-wrap:break-word;font:inherit;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:12px 14px;margin:6px 0 0;max-width:72ch}
+.meta{display:flex;gap:10px;font-size:14px;margin:2px 0} .mk{color:var(--mute);min-width:130px;font-family:"IBM Plex Mono",monospace;font-size:12px;padding-top:3px}
+.shared{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:4px;padding:16px;font-family:"IBM Plex Mono",monospace;font-size:13px;line-height:1.5;overflow-x:auto}
+@media (prefers-reduced-motion: no-preference){.copy{transition:color .15s}}
+</style>
+<div class="wrap">
+<header><h1>LinkedIn profile kit — Flavio Giorgio Guarini</h1>
+<p>Every field of the redesigned profile in eight languages, with live character counts against LinkedIn's limits. Pick a language, copy a field, paste it into LinkedIn.</p></header>
+<div class="note">LinkedIn could not be reached from the environment that produced this kit, so the profile is applied by hand. Order and instructions are in <code>linkedin/README.md</code>; secondary languages localise only Name, Headline, About, Experience and Education.</div>
+<nav class="tabs" aria-label="Language"><button class="tab on" data-lang="en" type="button">English<em>Primary</em></button><button class="tab" data-lang="it" type="button">Italiano</button><button class="tab" data-lang="es" type="button">Español</button><button class="tab" data-lang="fr" type="button">Français</button><button class="tab" data-lang="de" type="button">Deutsch</button><button class="tab" data-lang="nl" type="button">Nederlands</button><button class="tab" data-lang="ru" type="button">Русский</button><button class="tab" data-lang="zh" type="button">中文</button><button class="tab" data-lang="shared" type="button">Shared sections</button></nav>
+<section class="panel" data-lang="en" >
+<h2>Name</h2>
+<div class="field"><div class="fhead"><span class="flabel">Name</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Flavio Giorgio Guarini</pre></div>
+<h2>Headline</h2>
+<div class="field"><div class="fhead"><span class="flabel">Headline</span><span class="count">217<span class="lim">/220</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Junior Cybersecurity Analyst | SOC · Threat Intelligence · OSINT · Python Automation | Top 3% Global on TryHackMe | Human-Centric Security × Strategic Communication | IT · EN · ES | Open to international opportunities</pre></div>
+<h2>About</h2>
+<div class="field"><div class="fhead"><span class="flabel">About</span><span class="count">2390<span class="lim">/2600</span></span><button class="copy" type="button">Copy</button></div><pre class="val">I work at the intersection of cybersecurity and communication science: I defend systems by understanding the people who use them and the people who attack them.
+
+I am a Junior Cybersecurity Analyst with a hands-on foundation in Security Operations, Threat Intelligence, network analysis and Python automation, ranked in the Top 3% globally on TryHackMe (148 rooms completed, 31 badges). I am completing two degrees in parallel at Universitas Mercatorum in Rome, a BSc in Computer Engineering and a BA in Communication &amp; Multimedia, which lets me pair technical controls with Semiotics, Sociology and Digital Law to counter social engineering at its human root.
+
+What I bring
+▪ Technical security: SOC and Blue Team fundamentals (Splunk log analysis, YARA signature matching, phishing analysis), OSINT, network analysis, Kali Linux Purple, Flipper Zero, web exploitation concepts (XSS, IDOR) and defence against AI prompt injection.
+▪ Engineering: I build and maintain CSF SIEM 3D, an open-source Security Information &amp; Event Management framework with a FastAPI and PostgreSQL backend, 8 integrated security modules and a real-time 3D dashboard built with Three.js.
+▪ Human intelligence: Semiotics, Sociology and behavioural analysis applied to Human-Centric Security and Strategic Communication.
+▪ Commercial and operational results: in a customer-facing sales role at FitActive I personally closed hundreds of memberships, generating an estimated €80K–€100K in commercial value. Earlier, I supported a high-profile client in a confidential, high-security environment connected to the national intelligence network, handling sensitive logistics and multilingual communication with absolute discretion.
+▪ Leadership: I founded and directed VISIONOIR, a creative branding and sound ecosystem, managing contracts, budgets and a network of multidisciplinary artists, before closing it by choice to focus fully on Security Operations.
+
+Languages: Italian (native), English and Spanish (full professional proficiency), German and French (elementary).
+
+Based in Bari, Italy. Remote-ready and open to relocation for international opportunities in cybersecurity, technology, business, sales, marketing and creative roles, including graduate programmes and internships.
+
+Portfolio: flaviogiorgioguarini.github.io
+GitHub: github.com/FlavioGiorgioGuarini
+TryHackMe: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+<h2>Experience</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">65<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Front Desk Receptionist — Membership Sales &amp; Customer Acquisition</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">FitActive · Fitness Bari Japigia S.r.l.</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Full-time</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">May 2026 – Present</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Apulia, Italy · On-site</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">819<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Customer-facing commercial role covering acquisition, conversion and retention for a fitness club, with measurable sales results.
+
+▪ Sold hundreds of memberships, generating an estimated €80,000–€100,000 in total commercial value from personally closed sales.
+▪ Managed the full acquisition funnel: service and membership information, promotional selling, new sign-ups and renewals.
+▪ Handled inbound contacts by phone and WhatsApp, booked appointments and ran systematic follow-up of lead lists to maximise conversion.
+▪ Administrative operations: customer data entry, payment collection, database updates and document issuance, in full compliance with company procedures and security and privacy regulations.
+
+Skills: Sales · Customer Acquisition · Lead Conversion · Customer Service · Data Entry · Privacy Compliance</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">80<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Personal Assistant — Confidential Client (Government / Intelligence Environment)</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Confidential client</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Contract</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Jul 2024 – Dec 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rome, Lazio, Italy · On-site</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">583<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Operational support to a high-profile client connected to the national intelligence network.
+
+▪ Managed sensitive logistics and multilingual communications (Italian, English, Spanish) with absolute discretion.
+▪ Operated daily in a high-security, privacy-critical environment under strict confidentiality protocols.
+▪ Built the operational discipline, situational awareness and reliability that now underpin my security work.
+
+Further details are withheld for confidentiality reasons.
+
+Skills: Confidentiality · Sensitive Logistics · Multilingual Communication · Operational Security</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">28<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Founder &amp; Executive Director</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">VISIONOIR</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Self-employed</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">May 2025 – Nov 2025</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italy · Remote</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">339<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Founded and directed a creative ecosystem for branding and sound.
+
+▪ Managed contracts, budgets and a network of multidisciplinary artists.
+▪ Closed the project successfully by strategic choice, to concentrate fully on Security Operations.
+
+Skills: Entrepreneurship · Branding · Budget Management · Contract Management · Creative Direction</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">28<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Sound Designer &amp; Beta Tester</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Nov 2019 – Present</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Remote</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">272<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Official Ableton Live Beta Tester (Suite 12.3): testing pre-release builds and reporting issues to the development team.
+▪ Specialised in MPE technology, electronic composition and hardware audio integration.
+
+Skills: Ableton Live · Sound Design · Software Testing · MPE</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">21<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Founder &amp; Coordinator</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Adhuna Collective</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Self-employed</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Dec 2023 – Jul 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italy</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">158<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Organised mindfulness and sound retreats.
+▪ Produced &quot;The Methe Resort Experience&quot; (May 2024).
+
+Skills: Event Production · Coordination · Community Building</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">31<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Private English &amp; Spanish Tutor</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Self-employed</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Self-employed</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Dec 2023 – Apr 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Italy · Hybrid</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">200<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">One-to-one lessons for students at different levels, focused on conversation, pronunciation and vocabulary for academic and professional contexts.
+
+Skills: Teaching · English · Spanish · Communication</pre></div>
+</article>
+<h2>Education</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Bachelor&#x27;s degree (Laurea), Computer Engineering (L-8)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Mar 2026 – 2027 (expected)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rome, Italy</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">230<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Accelerated track. Engineering-focused curriculum: programming, data engineering, networks, software engineering, cybersecurity and automation, aligned with GII, IEEE and ACM standards for the design and management of ICT systems.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Bachelor&#x27;s degree (Laurea), Communication &amp; Multimedia (L-20)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Sep 2025 – 2027 (expected)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rome, Italy</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">215<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Accelerated track. Interdisciplinary programme in Semiotics, Sociology and Digital Law: analysis of human behaviour integrated with digital systems, applied to social engineering defence and Strategic Communication.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">33<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">The American School of Las Palmas</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">US High School Diploma</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2022 – 2023</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Las Palmas, Spain</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">173<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Activities and achievements: keynote speaker at the Auditorium Alfredo Kraus (400+ attendees) · Prom King 2022/23 · Eco-Council Member Badge · 80 hours of community service.</pre></div>
+</article>
+<h2>Licenses &amp; Certifications</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">48<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Advent of Cyber 2025 — Certificate of Completion</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Issued</span><span class="mv">2025</span></div>
+<div class="meta"><span class="mk">Credential URL</span><span class="mv">(paste the certificate link from your TryHackMe profile)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">287<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">24-day intensive challenge. SOC / Blue Team: log analysis with Splunk, YARA signature matching, phishing analysis. Cloud &amp; Forensics: AWS IAM concepts, Docker container hardening, malware analysis sandboxes. Red Team: web exploitation (XSS, IDOR) and defence against AI prompt injection.</pre></div>
+</article>
+<h2>Courses</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">53<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Python for Security — Scripting &amp; Automation Training</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Nov 2025 – Present (in progress)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">85<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Foundational courses on syntax and automation logic, oriented to security operations.</pre></div>
+</article>
+<h2>Projects</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">42<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">CSF SIEM 3D v2.0 — Cybersecurity Framework</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Jan 2026 – Present</span></div>
+<div class="meta"><span class="mk">URL</span><span class="mv">https://github.com/FlavioGiorgioGuarini/cybersecurity-homelab</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">584<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Open-source Security Information &amp; Event Management (SIEM) framework with a real-time 3D holographic dashboard, in active development.
+
+▪ Backend: FastAPI, PostgreSQL and SQLAlchemy ORM exposing 15+ REST endpoints for threat ingestion, statistics and dashboard metrics.
+▪ 8 integrated security modules: core, SOC, threat intelligence, network, offensive, defensive, forensics and web security, with dedicated test suites.
+▪ Frontend: Three.js 3D scene, Chart.js live charts, auto-refreshing threat table.
+▪ Containerised with Docker and docker-compose. Codebase: Python 74%, HTML 26%.</pre></div>
+</article>
+<h2>Honors &amp; Awards</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">25<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Top 3% Global — TryHackMe</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2026</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">127<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Global rank 54,086 · Level 0xA (Wizard) · 148 rooms completed · 31 badges. Public profile: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">54<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Bronze Medal — 200 m Butterfly, Infantil Championships</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">Infantil Championships, Tenerife</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2019</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">31<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Competitive swimmer since 2003.</pre></div>
+</article>
+</section><section class="panel" data-lang="it" hidden>
+<h2>Name</h2>
+<div class="field"><div class="fhead"><span class="flabel">Name</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Flavio Giorgio Guarini</pre></div>
+<h2>Headline</h2>
+<div class="field"><div class="fhead"><span class="flabel">Headline</span><span class="count">220<span class="lim">/220</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Junior Cybersecurity Analyst | SOC · Threat Intelligence · OSINT · Automazione Python | Top 3% globale su TryHackMe | Human-Centric Security × Comunicazione Strategica | IT · EN · ES | Aperto a opportunità internazionali</pre></div>
+<h2>About</h2>
+<div class="field"><div class="fhead"><span class="flabel">About</span><span class="count">2476<span class="lim">/2600</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Lavoro all&#x27;intersezione tra cybersecurity e scienze della comunicazione: difendo i sistemi comprendendo le persone che li usano e quelle che li attaccano.
+
+Sono un Junior Cybersecurity Analyst con basi pratiche in Security Operations, Threat Intelligence, analisi di rete e automazione Python, nel Top 3% globale su TryHackMe (148 room completate, 31 badge). Sto completando in parallelo due lauree presso l&#x27;Universitas Mercatorum di Roma, Ingegneria Informatica (L-8) e Comunicazione e Multimedialità (L-20): un doppio percorso che mi permette di unire i controlli tecnici a Semiotica, Sociologia e Diritto Digitale per contrastare il social engineering alla sua radice umana.
+
+Cosa porto
+▪ Sicurezza tecnica: fondamentali SOC e Blue Team (log analysis con Splunk, signature matching con YARA, analisi phishing), OSINT, analisi di rete, Kali Linux Purple, Flipper Zero, tecniche di web exploitation (XSS, IDOR) e difesa contro l&#x27;AI prompt injection.
+▪ Ingegneria: sviluppo e mantengo CSF SIEM 3D, un framework open source di Security Information &amp; Event Management con backend FastAPI e PostgreSQL, 8 moduli di sicurezza integrati e una dashboard 3D in tempo reale realizzata con Three.js.
+▪ Human intelligence: Semiotica, Sociologia e analisi del comportamento applicate alla Human-Centric Security e alla Comunicazione Strategica.
+▪ Risultati commerciali e operativi: in un ruolo di vendita a contatto con il cliente presso FitActive ho concluso personalmente centinaia di abbonamenti, generando un valore commerciale stimato di €80K–€100K. In precedenza ho supportato un cliente di alto profilo in un contesto riservato ad alta sicurezza collegato alla rete di intelligence nazionale, gestendo logistica sensibile e comunicazioni multilingue con assoluta discrezione.
+▪ Leadership: ho fondato e diretto VISIONOIR, un ecosistema creativo di branding e sound, gestendo contratti, budget e un network di artisti multidisciplinari, prima di chiuderlo per scelta e concentrarmi completamente sulle Security Operations.
+
+Lingue: italiano (madrelingua), inglese e spagnolo (piena padronanza professionale), tedesco e francese (elementare).
+
+Base a Bari. Disponibile al lavoro da remoto e al trasferimento per opportunità internazionali in cybersecurity, tecnologia, business, vendite, marketing e ruoli creativi, inclusi graduate programme e stage.
+
+Portfolio: flaviogiorgioguarini.github.io
+GitHub: github.com/FlavioGiorgioGuarini
+TryHackMe: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+<h2>Experience</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">62<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Addetto Reception — Vendita abbonamenti e acquisizione clienti</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">FitActive · Fitness Bari Japigia S.r.l.</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Tempo pieno</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">mag 2026 – Presente</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Puglia, Italia · In sede</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">905<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Ruolo commerciale a contatto con il cliente: acquisizione, conversione e fidelizzazione per un centro fitness, con risultati di vendita misurabili.
+
+▪ Vendita di centinaia di abbonamenti, per un volume commerciale complessivo stimato in €80.000–€100.000 generato dalle vendite concluse personalmente.
+▪ Gestione dell&#x27;intero funnel di acquisizione: informazioni su servizi e abbonamenti, vendita promozionale, nuove iscrizioni e rinnovi.
+▪ Gestione dei contatti in entrata via telefono e WhatsApp, presa appuntamenti e follow-up sistematico delle liste lead per massimizzare la conversione.
+▪ Operazioni amministrative: registrazione dati clienti, incassi, inserimento a database ed emissione documenti, nel pieno rispetto delle procedure aziendali e delle normative su sicurezza e privacy.
+
+Competenze: Vendita · Acquisizione clienti · Conversione lead · Customer service · Data entry · Compliance privacy</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">80<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Personal Assistant — Cliente confidenziale (contesto governativo / intelligence)</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Cliente confidenziale</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Contratto</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">lug 2024 – dic 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Roma, Lazio, Italia · In sede</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">620<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Supporto operativo a un cliente di alto profilo collegato alla rete di intelligence nazionale.
+
+▪ Gestione di logistica sensibile e comunicazioni multilingue (italiano, inglese, spagnolo) con assoluta discrezione.
+▪ Operatività quotidiana in un ambiente ad alta sicurezza e critico per la privacy, secondo rigidi protocolli di riservatezza.
+▪ Disciplina operativa, consapevolezza situazionale e affidabilità che oggi sostengono il mio lavoro nella sicurezza.
+
+Ulteriori dettagli non divulgabili per motivi di riservatezza.
+
+Competenze: Riservatezza · Logistica sensibile · Comunicazione multilingue · Sicurezza operativa</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">31<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Fondatore e Direttore Esecutivo</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">VISIONOIR</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Lavoro autonomo</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">mag 2025 – nov 2025</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italia · Da remoto</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">355<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Fondazione e direzione di un ecosistema creativo di branding e sound.
+
+▪ Gestione di contratti, budget e di un network di artisti multidisciplinari.
+▪ Progetto chiuso con successo per scelta strategica: concentrazione completa sulle Security Operations.
+
+Competenze: Imprenditorialità · Branding · Gestione budget · Gestione contratti · Direzione creativa</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">28<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Sound Designer e Beta Tester</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">nov 2019 – Presente</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Da remoto</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">287<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Official Ableton Live Beta Tester (Suite 12.3): test delle build pre-release e segnalazione dei problemi al team di sviluppo.
+▪ Specializzazione in tecnologia MPE, composizione elettronica e integrazione hardware audio.
+
+Competenze: Ableton Live · Sound Design · Software Testing · MPE</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">24<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Fondatore e Coordinatore</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Adhuna Collective</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Lavoro autonomo</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">dic 2023 – lug 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italia</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">179<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Organizzazione di ritiri di mindfulness e sound.
+▪ Produzione di &quot;The Methe Resort Experience&quot; (maggio 2024).
+
+Competenze: Produzione eventi · Coordinamento · Community building</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">40<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Insegnante privato di Inglese e Spagnolo</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Autonomo</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Lavoro autonomo</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">dic 2023 – apr 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Italia · Ibrido</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">199<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Lezioni individuali a studenti di livelli diversi, con focus su conversazione, pronuncia e lessico per contesti accademici e lavorativi.
+
+Competenze: Insegnamento · Inglese · Spagnolo · Comunicazione</pre></div>
+</article>
+<h2>Education</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Laurea in Ingegneria Informatica (L-8)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">mar 2026 – 2027 (prevista)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Roma, Italia</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">237<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Percorso accelerato. Curriculum a focus ingegneristico: programmazione, data engineering, reti, ingegneria del software, cybersecurity e automazione, allineato agli standard GII, IEEE e ACM per la progettazione e gestione di sistemi ICT.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Laurea in Comunicazione e Multimedialità (L-20)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">set 2025 – 2027 (prevista)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Roma, Italia</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">237<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Percorso accelerato. Programma interdisciplinare su Semiotica, Sociologia e Diritto Digitale: analisi del comportamento umano integrata con i sistemi digitali, applicata alla difesa dal social engineering e alla Comunicazione Strategica.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">33<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">The American School of Las Palmas</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Diploma di Scuola Superiore Statunitense</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2022 – 2023</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Las Palmas, Spagna</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">174<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Attività e riconoscimenti: keynote speaker all&#x27;Auditorium Alfredo Kraus (oltre 400 partecipanti) · Prom King a.s. 2022/23 · Eco-Council Member Badge · 80 ore di volontariato.</pre></div>
+</article>
+<h2>Licenses &amp; Certifications</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">48<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Advent of Cyber 2025 — Certificate of Completion</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Issued</span><span class="mv">2025</span></div>
+<div class="meta"><span class="mk">Credential URL</span><span class="mv">(inserisci il link del certificato dal tuo profilo TryHackMe)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">296<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Sfida intensiva di 24 giorni. SOC / Blue Team: log analysis con Splunk, signature matching con YARA, analisi phishing. Cloud &amp; Forensics: concetti di AWS IAM, hardening di container Docker, sandbox di malware analysis. Red Team: web exploitation (XSS, IDOR) e difesa contro l&#x27;AI prompt injection.</pre></div>
+</article>
+<h2>Courses</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">53<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Python for Security — Scripting &amp; Automation Training</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">nov 2025 – Presente (in corso)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">95<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Corsi fondamentali su sintassi e logica di automazione, orientati alle operazioni di sicurezza.</pre></div>
+</article>
+<h2>Projects</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">42<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">CSF SIEM 3D v2.0 — Cybersecurity Framework</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">gen 2026 – Presente</span></div>
+<div class="meta"><span class="mk">URL</span><span class="mv">https://github.com/FlavioGiorgioGuarini/cybersecurity-homelab</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">607<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Framework open source di Security Information &amp; Event Management (SIEM) con dashboard olografica 3D in tempo reale, in sviluppo attivo.
+
+▪ Backend: FastAPI, PostgreSQL e SQLAlchemy ORM con oltre 15 endpoint REST per ingestione minacce, statistiche e metriche di dashboard.
+▪ 8 moduli di sicurezza integrati: core, SOC, threat intelligence, rete, offensiva, difensiva, forensics e web security, con suite di test dedicate.
+▪ Frontend: scena 3D in Three.js, grafici live con Chart.js, tabella minacce con aggiornamento automatico.
+▪ Containerizzato con Docker e docker-compose. Codebase: Python 74%, HTML 26%.</pre></div>
+</article>
+<h2>Honors &amp; Awards</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">26<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Top 3% globale — TryHackMe</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2026</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">131<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Rank globale 54.086 · Livello 0xA (Wizard) · 148 room completate · 31 badge. Profilo pubblico: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">59<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Medaglia di bronzo — 200 m farfalla, Infantil Championships</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">Infantil Championships, Tenerife</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2019</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">28<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Nuotatore agonista dal 2003.</pre></div>
+</article>
+</section><section class="panel" data-lang="es" hidden>
+<h2>Name</h2>
+<div class="field"><div class="fhead"><span class="flabel">Name</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Flavio Giorgio Guarini</pre></div>
+<h2>Headline</h2>
+<div class="field"><div class="fhead"><span class="flabel">Headline</span><span class="count">219<span class="lim">/220</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Junior Cybersecurity Analyst | SOC · Threat Intelligence · OSINT · Automatización Python | Top 3% en TryHackMe | Human-Centric Security × Comunicación Estratégica | IT · EN · ES | Abierto a oportunidades internacionales</pre></div>
+<h2>About</h2>
+<div class="field"><div class="fhead"><span class="flabel">About</span><span class="count">2528<span class="lim">/2600</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Trabajo en la intersección entre la ciberseguridad y las ciencias de la comunicación: defiendo los sistemas comprendiendo a las personas que los usan y a las que los atacan.
+
+Soy Junior Cybersecurity Analyst con una base práctica en Security Operations, Threat Intelligence, análisis de redes y automatización con Python, dentro del Top 3% global en TryHackMe (148 rooms completadas, 31 insignias). Curso en paralelo dos carreras en la Universitas Mercatorum de Roma, un Grado en Ingeniería Informática y un Grado en Comunicación y Multimedia, lo que me permite combinar los controles técnicos con Semiótica, Sociología y Derecho Digital para frenar la ingeniería social en su raíz humana.
+
+Lo que aporto
+▪ Seguridad técnica: fundamentos de SOC y Blue Team (análisis de logs con Splunk, signature matching con YARA, análisis de phishing), OSINT, análisis de redes, Kali Linux Purple, Flipper Zero, conceptos de web exploitation (XSS, IDOR) y defensa frente a la AI prompt injection.
+▪ Ingeniería: desarrollo y mantengo CSF SIEM 3D, un framework open source de Security Information &amp; Event Management con backend en FastAPI y PostgreSQL, 8 módulos de seguridad integrados y un panel 3D en tiempo real construido con Three.js.
+▪ Human intelligence: Semiótica, Sociología y análisis del comportamiento aplicados a la Human-Centric Security y a la Comunicación Estratégica.
+▪ Resultados comerciales y operativos: en un puesto de venta en contacto directo con el cliente en FitActive cerré personalmente cientos de abonos, generando un valor comercial estimado de 80K–100K €. Antes di soporte a un cliente de alto perfil en un entorno confidencial de alta seguridad vinculado a la red de inteligencia nacional, gestionando logística sensible y comunicación multilingüe con absoluta discreción.
+▪ Liderazgo: fundé y dirigí VISIONOIR, un ecosistema creativo de branding y sonido, gestionando contratos, presupuestos y una red de artistas multidisciplinares, antes de cerrarlo por decisión propia para centrarme por completo en las Security Operations.
+
+Idiomas: italiano (nativo), inglés y español (competencia profesional plena), alemán y francés (nivel elemental).
+
+Con base en Bari (Italia). Disponible para trabajar en remoto y para reubicarme por oportunidades internacionales en ciberseguridad, tecnología, negocio, ventas, marketing y perfiles creativos, incluidos graduate programmes y prácticas.
+
+Portfolio: flaviogiorgioguarini.github.io
+GitHub: github.com/FlavioGiorgioGuarini
+TryHackMe: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+<h2>Experience</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">55<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Recepcionista — Venta de abonos y captación de clientes</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">FitActive · Fitness Bari Japigia S.r.l.</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Jornada completa</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">may 2026 – Actualidad</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Apulia, Italia · Presencial</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">921<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Puesto comercial en contacto directo con el cliente: captación, conversión y fidelización para un centro fitness, con resultados de venta medibles.
+
+▪ Venta de cientos de abonos, con un valor comercial total estimado de 80.000–100.000 € generado por ventas cerradas personalmente.
+▪ Gestión del funnel de captación completo: información sobre servicios y abonos, venta promocional, nuevas altas y renovaciones.
+▪ Atención de contactos entrantes por teléfono y WhatsApp, concertación de citas y seguimiento sistemático de listas de leads para maximizar la conversión.
+▪ Operativa administrativa: registro de datos de clientes, cobros, actualización de bases de datos y emisión de documentos, cumpliendo íntegramente los procedimientos de la empresa y la normativa de seguridad y privacidad.
+
+Competencias: Ventas · Captación de clientes · Conversión de leads · Atención al cliente · Data entry · Cumplimiento de privacidad</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">83<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Asistente personal — Cliente confidencial (entorno gubernamental / de inteligencia)</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Cliente confidencial</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Por contrato</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">jul 2024 – dic 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Roma, Lacio, Italia · Presencial</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">602<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Soporte operativo a un cliente de alto perfil vinculado a la red de inteligencia nacional.
+
+▪ Gestión de logística sensible y comunicaciones multilingües (italiano, inglés, español) con absoluta discreción.
+▪ Actividad diaria en un entorno de alta seguridad y crítico para la privacidad, bajo estrictos protocolos de confidencialidad.
+▪ Disciplina operativa, conciencia situacional y fiabilidad que hoy sostienen mi trabajo en seguridad.
+
+No se facilitan más detalles por motivos de confidencialidad.
+
+Competencias: Confidencialidad · Logística sensible · Comunicación multilingüe · Seguridad operativa</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">29<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Fundador y Director Ejecutivo</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">VISIONOIR</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Autónomo</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">may 2025 – nov 2025</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italia · En remoto</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">374<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Fundación y dirección de un ecosistema creativo de branding y sonido.
+
+▪ Gestión de contratos, presupuestos y de una red de artistas multidisciplinares.
+▪ Proyecto cerrado con éxito por decisión estratégica, para centrarme por completo en las Security Operations.
+
+Competencias: Emprendimiento · Branding · Gestión de presupuestos · Gestión de contratos · Dirección creativa</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">33<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Diseñador de sonido y Beta Tester</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">nov 2019 – Actualidad</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">En remoto</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">301<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Official Ableton Live Beta Tester (Suite 12.3): pruebas de versiones pre-release y reporte de incidencias al equipo de desarrollo.
+▪ Especialización en tecnología MPE, composición electrónica e integración de hardware de audio.
+
+Competencias: Ableton Live · Diseño de sonido · Software Testing · MPE</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Fundador y Coordinador</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Adhuna Collective</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Autónomo</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">dic 2023 – jul 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italia</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">185<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Organización de retiros de mindfulness y sonido.
+▪ Producción de &quot;The Methe Resort Experience&quot; (mayo de 2024).
+
+Competencias: Producción de eventos · Coordinación · Community building</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">39<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Profesor particular de inglés y español</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Autónomo</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Autónomo</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">dic 2023 – abr 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Italia · Híbrido</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">214<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Clases individuales para estudiantes de distintos niveles, centradas en conversación, pronunciación y vocabulario para contextos académicos y profesionales.
+
+Competencias: Docencia · Inglés · Español · Comunicación</pre></div>
+</article>
+<h2>Education</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Grado en Ingeniería Informática (L-8)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">mar 2026 – 2027 (prevista)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Roma, Italia</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">248<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Itinerario acelerado. Plan de estudios con enfoque ingenieril: programación, data engineering, redes, ingeniería del software, ciberseguridad y automatización, alineado con los estándares GII, IEEE y ACM para el diseño y la gestión de sistemas TIC.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Grado en Comunicación y Multimedia (L-20)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">sep 2025 – 2027 (prevista)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Roma, Italia</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">249<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Itinerario acelerado. Programa interdisciplinar en Semiótica, Sociología y Derecho Digital: análisis del comportamiento humano integrado con los sistemas digitales, aplicado a la defensa frente a la ingeniería social y a la Comunicación Estratégica.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">33<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">The American School of Las Palmas</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Diploma de Bachillerato estadounidense (US High School Diploma)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2022 – 2023</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Las Palmas, España</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">166<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Actividades y logros: keynote speaker en el Auditorio Alfredo Kraus (más de 400 asistentes) · Prom King 2022/23 · Eco-Council Member Badge · 80 horas de voluntariado.</pre></div>
+</article>
+<h2>Licenses &amp; Certifications</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">48<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Advent of Cyber 2025 — Certificate of Completion</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Issued</span><span class="mv">2025</span></div>
+<div class="meta"><span class="mk">Credential URL</span><span class="mv">(pega aquí el enlace del certificado desde tu perfil de TryHackMe)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">314<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Reto intensivo de 24 días. SOC / Blue Team: análisis de logs con Splunk, signature matching con YARA, análisis de phishing. Cloud &amp; Forensics: conceptos de AWS IAM, hardening de contenedores Docker, sandboxes de análisis de malware. Red Team: web exploitation (XSS, IDOR) y defensa frente a la AI prompt injection.</pre></div>
+</article>
+<h2>Courses</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">53<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Python for Security — Scripting &amp; Automation Training</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">nov 2025 – Actualidad (en curso)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">107<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Cursos de fundamentos sobre sintaxis y lógica de automatización, orientados a las operaciones de seguridad.</pre></div>
+</article>
+<h2>Projects</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">42<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">CSF SIEM 3D v2.0 — Cybersecurity Framework</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">ene 2026 – Actualidad</span></div>
+<div class="meta"><span class="mk">URL</span><span class="mv">https://github.com/FlavioGiorgioGuarini/cybersecurity-homelab</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">616<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Framework open source de Security Information &amp; Event Management (SIEM) con panel holográfico 3D en tiempo real, en desarrollo activo.
+
+▪ Backend: FastAPI, PostgreSQL y SQLAlchemy ORM con más de 15 endpoints REST para ingesta de amenazas, estadísticas y métricas del panel.
+▪ 8 módulos de seguridad integrados: core, SOC, threat intelligence, red, ofensivo, defensivo, forensics y web security, con suites de test dedicadas.
+▪ Frontend: escena 3D en Three.js, gráficos en vivo con Chart.js, tabla de amenazas con actualización automática.
+▪ Containerizado con Docker y docker-compose. Codebase: Python 74%, HTML 26%.</pre></div>
+</article>
+<h2>Honors &amp; Awards</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">25<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Top 3% global — TryHackMe</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2026</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">132<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Rank global 54.086 · Nivel 0xA (Wizard) · 148 rooms completadas · 31 insignias. Perfil público: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">58<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Medalla de bronce — 200 m mariposa, Infantil Championships</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">Infantil Championships, Tenerife</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2019</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">34<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Nadador de competición desde 2003.</pre></div>
+</article>
+</section><section class="panel" data-lang="fr" hidden>
+<h2>Name</h2>
+<div class="field"><div class="fhead"><span class="flabel">Name</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Flavio Giorgio Guarini</pre></div>
+<h2>Headline</h2>
+<div class="field"><div class="fhead"><span class="flabel">Headline</span><span class="count">215<span class="lim">/220</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Junior Cybersecurity Analyst | SOC · Threat Intelligence · OSINT · Automatisation Python | Top 3 % mondial sur TryHackMe | Human-Centric Security × Communication stratégique | IT · EN · ES | Ouvert à l&#x27;international</pre></div>
+<h2>About</h2>
+<div class="field"><div class="fhead"><span class="flabel">About</span><span class="count">2577<span class="lim">/2600</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Je travaille à l&#x27;intersection de la cybersécurité et des sciences de la communication : je défends les systèmes en comprenant les personnes qui les utilisent et celles qui les attaquent.
+
+Analyste cybersécurité junior (Junior Cybersecurity Analyst) avec des bases pratiques en Security Operations, Threat Intelligence, analyse réseau et automatisation Python, classé dans le Top 3 % mondial sur TryHackMe (148 rooms complétées, 31 badges). Je prépare en parallèle deux licences à l&#x27;Universitas Mercatorum de Rome, Ingénierie informatique (L-8) et Communication et multimédia (L-20) : un double cursus qui associe contrôles techniques, sémiotique, sociologie et droit du numérique pour contrer le social engineering à sa racine humaine.
+
+Ce que j&#x27;apporte
+▪ Sécurité technique : fondamentaux SOC et Blue Team (analyse de logs avec Splunk, signature matching avec YARA, analyse de phishing), OSINT, analyse réseau, Kali Linux Purple, Flipper Zero, notions de web exploitation (XSS, IDOR) et défense contre l&#x27;AI prompt injection.
+▪ Ingénierie : je développe et maintiens CSF SIEM 3D, un framework open source de Security Information &amp; Event Management avec backend FastAPI et PostgreSQL, 8 modules de sécurité intégrés et un tableau de bord 3D en temps réel en Three.js.
+▪ Human intelligence : sémiotique, sociologie et analyse comportementale appliquées à la Human-Centric Security et à la communication stratégique.
+▪ Résultats commerciaux et opérationnels : en poste de vente au contact de la clientèle chez FitActive, j&#x27;ai conclu personnellement des centaines d&#x27;abonnements, pour une valeur commerciale estimée à €80K–€100K. Auparavant, j&#x27;ai accompagné un client de haut niveau dans un environnement confidentiel à haute sécurité lié au réseau de renseignement national, gérant logistique sensible et communications multilingues avec une discrétion absolue.
+▪ Leadership : j&#x27;ai fondé et dirigé VISIONOIR, un écosystème créatif de branding et de sound, en pilotant contrats, budgets et un réseau d&#x27;artistes pluridisciplinaires, avant de le fermer par choix et me consacrer pleinement aux Security Operations.
+
+Langues : italien (langue maternelle), anglais et espagnol (maîtrise professionnelle complète), allemand et français (élémentaire).
+
+Basé à Bari, en Italie. Disponible en télétravail et ouvert à la mobilité internationale : cybersécurité, technologie, business, vente, marketing et métiers créatifs, graduate programmes et stages inclus.
+
+Portfolio: flaviogiorgioguarini.github.io
+GitHub: github.com/FlavioGiorgioGuarini
+TryHackMe: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+<h2>Experience</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">59<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Réceptionniste — Vente d&#x27;abonnements et acquisition clients</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">FitActive · Fitness Bari Japigia S.r.l.</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Temps plein</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">mai 2026 – Aujourd&#x27;hui</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Pouilles, Italie · Sur site</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">1013<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Poste commercial en contact direct avec la clientèle : acquisition, conversion et fidélisation pour un club de fitness, avec des résultats de vente mesurables.
+
+▪ Vente de centaines d&#x27;abonnements, pour un volume commercial global estimé à 80 000–100 000 € généré par des ventes conclues personnellement.
+▪ Pilotage de l&#x27;ensemble du tunnel d&#x27;acquisition : information sur les services et les abonnements, vente promotionnelle, nouvelles inscriptions et renouvellements.
+▪ Gestion des contacts entrants par téléphone et WhatsApp, prise de rendez-vous et relances systématiques des listes de leads pour maximiser la conversion.
+▪ Opérations administratives : saisie des données clients, encaissements, mise à jour de la base de données et émission de documents, dans le strict respect des procédures internes et des réglementations sur la sécurité et la protection des données.
+
+Compétences : Vente · Acquisition clients · Conversion de leads · Relation client · Saisie de données · Conformité protection des données</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">88<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Assistant personnel — Client confidentiel (environnement gouvernemental / renseignement)</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Client confidentiel</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Contrat</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">juil. 2024 – déc. 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rome, Latium, Italie · Sur site</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">666<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Support opérationnel auprès d&#x27;un client de haut niveau relié au réseau de renseignement national.
+
+▪ Gestion d&#x27;une logistique sensible et de communications multilingues (italien, anglais, espagnol) avec une discrétion absolue.
+▪ Activité quotidienne dans un environnement à haute sécurité et critique pour la confidentialité, selon des protocoles stricts.
+▪ Discipline opérationnelle, conscience situationnelle et fiabilité qui soutiennent aujourd&#x27;hui mon travail en sécurité.
+
+Les autres détails ne sont pas communicables pour des raisons de confidentialité.
+
+Compétences : Confidentialité · Logistique sensible · Communication multilingue · Sécurité opérationnelle</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">31<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Fondateur et Directeur exécutif</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">VISIONOIR</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Indépendant</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">mai 2025 – nov. 2025</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italie · À distance</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">365<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Création et direction d&#x27;un écosystème créatif de branding et de sound.
+
+▪ Gestion des contrats, des budgets et d&#x27;un réseau d&#x27;artistes pluridisciplinaires.
+▪ Projet clôturé avec succès par choix stratégique : concentration totale sur les Security Operations.
+
+Compétences : Entrepreneuriat · Branding · Gestion budgétaire · Gestion contractuelle · Direction créative</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">30<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Sound Designer et Beta Testeur</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">nov. 2019 – Aujourd&#x27;hui</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">À distance</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">296<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Official Ableton Live Beta Tester (Suite 12.3) : test des versions pré-release et remontée des anomalies à l&#x27;équipe de développement.
+▪ Spécialisation en technologie MPE, composition électronique et intégration de matériel audio.
+
+Compétences : Ableton Live · Sound Design · Test logiciel · MPE</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">25<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Fondateur et Coordinateur</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Adhuna Collective</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Indépendant</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">déc. 2023 – juil. 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italie</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">193<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Organisation de retraites de mindfulness et de sound.
+▪ Production de &quot;The Methe Resort Experience&quot; (mai 2024).
+
+Compétences : Production d&#x27;événements · Coordination · Animation de communauté</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">46<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Professeur particulier d&#x27;anglais et d&#x27;espagnol</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Indépendant</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Indépendant</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">déc. 2023 – avr. 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Italie · Hybride</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">232<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Cours individuels pour des élèves de niveaux différents, axés sur la conversation, la prononciation et le vocabulaire pour des contextes académiques et professionnels.
+
+Compétences : Enseignement · Anglais · Espagnol · Communication</pre></div>
+</article>
+<h2>Education</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Licence (Laurea), Ingénierie informatique (L-8)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">mars 2026 – 2027 (prévue)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rome, Italie</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">235<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Cursus accéléré. Programme à dominante ingénierie : programmation, data engineering, réseaux, génie logiciel, cybersécurité et automatisation, aligné sur les standards GII, IEEE et ACM pour la conception et la gestion des systèmes ICT.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Licence (Laurea), Communication et multimédia (L-20)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">sept. 2025 – 2027 (prévue)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rome, Italie</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">247<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Cursus accéléré. Programme interdisciplinaire en sémiotique, sociologie et droit du numérique : analyse du comportement humain intégrée aux systèmes numériques, appliquée à la défense contre le social engineering et à la communication stratégique.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">33<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">The American School of Las Palmas</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Diplôme de fin d&#x27;études secondaires américain (US High School Diploma)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2022 – 2023</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Las Palmas, Espagne</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">172<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Activités et distinctions : keynote speaker à l&#x27;Auditorium Alfredo Kraus (plus de 400 participants) · Prom King 2022/23 · Eco-Council Member Badge · 80 heures de bénévolat.</pre></div>
+</article>
+<h2>Licenses &amp; Certifications</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">48<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Advent of Cyber 2025 — Certificate of Completion</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Issued</span><span class="mv">2025</span></div>
+<div class="meta"><span class="mk">Credential URL</span><span class="mv">(insérez le lien du certificat depuis votre profil TryHackMe)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">310<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Challenge intensif de 24 jours. SOC / Blue Team : analyse de logs avec Splunk, signature matching avec YARA, analyse de phishing. Cloud &amp; Forensics : notions d&#x27;AWS IAM, hardening de conteneurs Docker, sandbox de malware analysis. Red Team : web exploitation (XSS, IDOR) et défense contre l&#x27;AI prompt injection.</pre></div>
+</article>
+<h2>Courses</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">53<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Python for Security — Scripting &amp; Automation Training</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">nov. 2025 – Aujourd&#x27;hui (en cours)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">98<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Cours fondamentaux sur la syntaxe et la logique d&#x27;automatisation, orientés opérations de sécurité.</pre></div>
+</article>
+<h2>Projects</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">42<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">CSF SIEM 3D v2.0 — Cybersecurity Framework</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">janv. 2026 – Aujourd&#x27;hui</span></div>
+<div class="meta"><span class="mk">URL</span><span class="mv">https://github.com/FlavioGiorgioGuarini/cybersecurity-homelab</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">680<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Framework open source de Security Information &amp; Event Management (SIEM) avec tableau de bord holographique 3D en temps réel, en développement actif.
+
+▪ Backend : FastAPI, PostgreSQL et SQLAlchemy ORM exposant plus de 15 endpoints REST pour l&#x27;ingestion des menaces, les statistiques et les métriques du tableau de bord.
+▪ 8 modules de sécurité intégrés : core, SOC, threat intelligence, réseau, offensif, défensif, forensics et web security, avec des suites de tests dédiées.
+▪ Frontend : scène 3D en Three.js, graphiques en temps réel avec Chart.js, table des menaces à rafraîchissement automatique.
+▪ Conteneurisé avec Docker et docker-compose. Codebase : Python 74 %, HTML 26 %.</pre></div>
+</article>
+<h2>Honors &amp; Awards</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">27<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Top 3 % mondial — TryHackMe</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2026</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">130<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Rang mondial 54 086 · Niveau 0xA (Wizard) · 148 rooms complétées · 31 badges. Profil public : tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">59<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Médaille de bronze — 200 m papillon, Infantil Championships</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">Infantil Championships, Tenerife</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2019</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">34<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Nageur de compétition depuis 2003.</pre></div>
+</article>
+</section><section class="panel" data-lang="de" hidden>
+<h2>Name</h2>
+<div class="field"><div class="fhead"><span class="flabel">Name</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Flavio Giorgio Guarini</pre></div>
+<h2>Headline</h2>
+<div class="field"><div class="fhead"><span class="flabel">Headline</span><span class="count">217<span class="lim">/220</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Junior Cybersecurity Analyst | SOC · Threat Intelligence · OSINT · Python-Automatisierung | Top 3 % weltweit auf TryHackMe | Human-Centric Security × Strategische Kommunikation | IT · EN · ES | International verfügbar</pre></div>
+<h2>About</h2>
+<div class="field"><div class="fhead"><span class="flabel">About</span><span class="count">2594<span class="lim">/2600</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Ich arbeite an der Schnittstelle von Cybersicherheit und Kommunikationswissenschaft: Ich schütze Systeme, indem ich die Menschen verstehe, die sie nutzen — und die, die sie angreifen.
+
+Als Junior Cybersecurity Analyst bringe ich praxisnahe Grundlagen in Security Operations, Threat Intelligence, Netzwerkanalyse und Python-Automatisierung mit und gehöre auf TryHackMe zu den Top 3 % weltweit (148 abgeschlossene Rooms, 31 Badges). An der Universitas Mercatorum in Rom absolviere ich parallel zwei Studiengänge, Informatik-Ingenieurwesen (B.Sc.) und Kommunikation &amp; Multimedia (B.A.). So verbinde ich technische Schutzmaßnahmen mit Semiotik, Soziologie und Digitalrecht, um Social Engineering an seiner menschlichen Wurzel zu begegnen.
+
+Was ich mitbringe
+▪ Technische IT-Sicherheit: SOC- und Blue-Team-Grundlagen (Log-Analyse mit Splunk, Signature Matching mit YARA, Phishing-Analyse), OSINT, Netzwerkanalyse, Kali Linux Purple, Flipper Zero, Web-Exploitation-Konzepte (XSS, IDOR) und Abwehr von AI Prompt Injection.
+▪ Engineering: Ich entwickle und pflege CSF SIEM 3D, ein Open-Source-Framework für Security Information &amp; Event Management mit FastAPI- und PostgreSQL-Backend, 8 integrierten Sicherheitsmodulen und einem 3D-Echtzeit-Dashboard auf Basis von Three.js.
+▪ Human Intelligence: Semiotik, Soziologie und Verhaltensanalyse, angewandt auf Human-Centric Security und Strategische Kommunikation.
+▪ Kommerzielle und operative Ergebnisse: In einer kundennahen Vertriebsrolle bei FitActive habe ich persönlich Hunderte Mitgliedschaften abgeschlossen und damit einen geschätzten Umsatzwert von 80K–100K € erzielt. Zuvor betreute ich einen hochrangigen Kunden in einem vertraulichen Hochsicherheitsumfeld mit Anbindung an das nationale Nachrichtendienstnetz: sensible Logistik und mehrsprachige Kommunikation mit absoluter Diskretion.
+▪ Leadership: Ich habe VISIONOIR gegründet und geleitet, ein kreatives Branding- und Sound-Ökosystem, inklusive Verträgen, Budgets und einem Netzwerk multidisziplinärer Künstlerinnen und Künstler — und das Projekt bewusst beendet, um mich voll auf Security Operations zu konzentrieren.
+
+Sprachen: Italienisch (Muttersprache), Englisch und Spanisch (verhandlungssicher), Deutsch und Französisch (Grundkenntnisse).
+
+Standort Bari, Italien. Remote-bereit und umzugsbereit für internationale Aufgaben in Cybersicherheit, Technologie, Business, Vertrieb, Marketing und kreativen Bereichen, inklusive Graduate Programmes und Praktika.
+
+Portfolio: flaviogiorgioguarini.github.io
+GitHub: github.com/FlavioGiorgioGuarini
+TryHackMe: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+<h2>Experience</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">64<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Empfangsmitarbeiter — Mitgliedschaftsverkauf und Kundengewinnung</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">FitActive · Fitness Bari Japigia S.r.l.</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Vollzeit</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Mai 2026 – heute</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Apulien, Italien · Vor Ort</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">897<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Kundennahe Vertriebsrolle für einen Fitnessclub: Neukundengewinnung, Conversion und Kundenbindung mit messbaren Verkaufsergebnissen.
+
+▪ Verkauf von Hunderten Mitgliedschaften mit einem geschätzten Gesamtumsatzwert von 80.000–100.000 € aus persönlich abgeschlossenen Verträgen.
+▪ Steuerung des gesamten Akquise-Funnels: Beratung zu Leistungen und Mitgliedschaften, Aktionsverkauf, Neuanmeldungen und Verlängerungen.
+▪ Bearbeitung eingehender Kontakte per Telefon und WhatsApp, Terminvereinbarung und systematisches Follow-up der Lead-Listen zur Maximierung der Conversion.
+▪ Administrative Abläufe: Erfassung von Kundendaten, Zahlungseinzug, Datenbankpflege und Dokumentenausstellung, vollständig konform mit den Unternehmensprozessen sowie den Sicherheits- und Datenschutzvorgaben.
+
+Kenntnisse: Vertrieb · Kundengewinnung · Lead-Conversion · Kundenservice · Datenerfassung · Datenschutz-Compliance</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">80<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Persönlicher Assistent — Vertraulicher Kunde (Behörden-/Nachrichtendienstumfeld)</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Vertraulicher Kunde</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Auftragsarbeit</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Juli 2024 – Dez. 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rom, Latium, Italien · Vor Ort</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">651<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Operative Unterstützung eines hochrangigen Kunden mit Anbindung an das nationale Nachrichtendienstnetz.
+
+▪ Steuerung sensibler Logistik und mehrsprachiger Kommunikation (Italienisch, Englisch, Spanisch) mit absoluter Diskretion.
+▪ Tägliche Arbeit in einem Hochsicherheits- und datenschutzkritischen Umfeld nach strengen Vertraulichkeitsprotokollen.
+▪ Aufbau der operativen Disziplin, Situationswahrnehmung und Zuverlässigkeit, die heute meine Arbeit in der IT-Sicherheit tragen.
+
+Weitere Details werden aus Vertraulichkeitsgründen nicht offengelegt.
+
+Kenntnisse: Vertraulichkeit · Sensible Logistik · Mehrsprachige Kommunikation · Operative Sicherheit</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">27<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Gründer und Geschäftsführer</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">VISIONOIR</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Selbständig</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Mai 2025 – Nov. 2025</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italien · Remote</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">395<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Gründung und Leitung eines kreativen Ökosystems für Branding und Sound.
+
+▪ Steuerung von Verträgen, Budgets und einem Netzwerk multidisziplinärer Künstlerinnen und Künstler.
+▪ Projekt aus strategischer Entscheidung erfolgreich abgeschlossen, um mich voll auf Security Operations zu konzentrieren.
+
+Kenntnisse: Unternehmertum · Branding · Budgetsteuerung · Vertragsmanagement · Creative Direction</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">30<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Sound Designer und Beta-Tester</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Freiberuflich</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Nov. 2019 – heute</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Remote</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">292<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Offizieller Ableton Live Beta Tester (Suite 12.3): Test von Pre-Release-Builds und Meldung von Fehlern an das Entwicklungsteam.
+▪ Spezialisierung auf MPE-Technologie, elektronische Komposition und Audio-Hardware-Integration.
+
+Kenntnisse: Ableton Live · Sound Design · Software-Testing · MPE</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">23<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Gründer und Koordinator</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Adhuna Collective</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Selbständig</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Dez. 2023 – Juli 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italien</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">175<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Organisation von Mindfulness- und Sound-Retreats.
+▪ Produktion von &quot;The Methe Resort Experience&quot; (Mai 2024).
+
+Kenntnisse: Eventproduktion · Koordination · Community Building</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">38<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Privatlehrer für Englisch und Spanisch</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Selbstständig</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Selbständig</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Dez. 2023 – Apr. 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Italien · Hybrid</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">212<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Einzelunterricht für Lernende unterschiedlicher Niveaus mit Fokus auf Konversation, Aussprache und Wortschatz für akademische und berufliche Kontexte.
+
+Kenntnisse: Unterricht · Englisch · Spanisch · Kommunikation</pre></div>
+</article>
+<h2>Education</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Bachelor (Laurea), Informatik-Ingenieurwesen (L-8)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">März 2026 – 2027 (voraussichtlich)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rom, Italien</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">277<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Verkürzter Studienverlauf. Ingenieurwissenschaftlich ausgerichtetes Curriculum: Programmierung, Data Engineering, Netzwerke, Software Engineering, Cybersicherheit und Automatisierung, ausgerichtet an den Standards von GII, IEEE und ACM für Entwurf und Betrieb von ICT-Systemen.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Bachelor (Laurea), Kommunikation &amp; Multimedia (L-20)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Sep. 2025 – 2027 (voraussichtlich)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rom, Italien</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">253<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Verkürzter Studienverlauf. Interdisziplinäres Programm zu Semiotik, Soziologie und Digitalrecht: Analyse menschlichen Verhaltens im Zusammenspiel mit digitalen Systemen, angewandt auf die Abwehr von Social Engineering und auf Strategische Kommunikation.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">33<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">The American School of Las Palmas</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">US-amerikanischer High-School-Abschluss</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2022 – 2023</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Las Palmas, Spanien</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">181<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Aktivitäten und Auszeichnungen: Keynote Speaker im Auditorium Alfredo Kraus (über 400 Teilnehmende) · Prom King 2022/23 · Eco-Council Member Badge · 80 Stunden gemeinnützige Arbeit.</pre></div>
+</article>
+<h2>Licenses &amp; Certifications</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">48<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Advent of Cyber 2025 — Certificate of Completion</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Issued</span><span class="mv">2025</span></div>
+<div class="meta"><span class="mk">Credential URL</span><span class="mv">(den Zertifikatslink aus dem eigenen TryHackMe-Profil einfügen)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">293<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">24-tägige Intensiv-Challenge. SOC / Blue Team: Log-Analyse mit Splunk, Signature Matching mit YARA, Phishing-Analyse. Cloud &amp; Forensics: AWS-IAM-Konzepte, Hardening von Docker-Containern, Sandboxes für Malware-Analyse. Red Team: Web Exploitation (XSS, IDOR) und Abwehr von AI Prompt Injection.</pre></div>
+</article>
+<h2>Courses</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">53<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Python for Security — Scripting &amp; Automation Training</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Nov. 2025 – heute (laufend)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">90<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Grundlagenkurse zu Syntax und Automatisierungslogik, ausgerichtet auf Security Operations.</pre></div>
+</article>
+<h2>Projects</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">42<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">CSF SIEM 3D v2.0 — Cybersecurity Framework</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">Jan. 2026 – heute</span></div>
+<div class="meta"><span class="mk">URL</span><span class="mv">https://github.com/FlavioGiorgioGuarini/cybersecurity-homelab</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">610<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Open-Source-Framework für Security Information &amp; Event Management (SIEM) mit holografischem 3D-Echtzeit-Dashboard, in aktiver Entwicklung.
+
+▪ Backend: FastAPI, PostgreSQL und SQLAlchemy ORM mit über 15 REST-Endpoints für Threat-Ingestion, Statistiken und Dashboard-Metriken.
+▪ 8 integrierte Sicherheitsmodule: Core, SOC, Threat Intelligence, Netzwerk, Offensive, Defensive, Forensics und Web Security, mit eigenen Test-Suites.
+▪ Frontend: 3D-Szene mit Three.js, Live-Diagramme mit Chart.js, Bedrohungstabelle mit Auto-Refresh.
+▪ Containerisiert mit Docker und docker-compose. Codebasis: Python 74 %, HTML 26 %.</pre></div>
+</article>
+<h2>Honors &amp; Awards</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">28<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Top 3 % weltweit — TryHackMe</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2026</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">141<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Weltweiter Rang 54.086 · Level 0xA (Wizard) · 148 abgeschlossene Rooms · 31 Badges. Öffentliches Profil: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">60<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Bronzemedaille — 200 m Schmetterling, Infantil Championships</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">Infantil Championships, Tenerife</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2019</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">29<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Leistungsschwimmer seit 2003.</pre></div>
+</article>
+</section><section class="panel" data-lang="nl" hidden>
+<h2>Name</h2>
+<div class="field"><div class="fhead"><span class="flabel">Name</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Flavio Giorgio Guarini</pre></div>
+<h2>Headline</h2>
+<div class="field"><div class="fhead"><span class="flabel">Headline</span><span class="count">218<span class="lim">/220</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Junior Cybersecurity Analyst | SOC · Threat Intelligence · OSINT · Python-automatisering | TryHackMe Top 3% wereldwijd | Human-Centric Security × Strategische Communicatie | IT · EN · ES | Open voor internationaal werk</pre></div>
+<h2>About</h2>
+<div class="field"><div class="fhead"><span class="flabel">About</span><span class="count">2488<span class="lim">/2600</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Ik werk op het snijvlak van cybersecurity en communicatiewetenschap: ik beveilig systemen door de mensen te begrijpen die ze gebruiken én de mensen die ze aanvallen.
+
+Ik ben Junior Cybersecurity Analyst met een praktische basis in Security Operations, Threat Intelligence, netwerkanalyse en Python-automatisering, en sta in de Top 3% wereldwijd op TryHackMe (148 rooms afgerond, 31 badges). Ik rond op dit moment twee bachelors parallel af aan Universitas Mercatorum in Rome, Informatica-engineering en Communicatie &amp; Multimedia. Daardoor combineer ik technische maatregelen met semiotiek, sociologie en digitaal recht, en pak ik social engineering aan bij de menselijke wortel.
+
+Wat ik meebreng
+▪ Technische security: SOC- en Blue Team-fundamenten (loganalyse met Splunk, signature matching met YARA, phishinganalyse), OSINT, netwerkanalyse, Kali Linux Purple, Flipper Zero, web exploitation-concepten (XSS, IDOR) en verdediging tegen AI prompt injection.
+▪ Engineering: ik bouw en onderhoud CSF SIEM 3D, een open source Security Information &amp; Event Management-framework met een FastAPI- en PostgreSQL-backend, 8 geïntegreerde securitymodules en een realtime 3D-dashboard gebouwd met Three.js.
+▪ Human intelligence: semiotiek, sociologie en gedragsanalyse toegepast op Human-Centric Security en Strategische Communicatie.
+▪ Commerciële en operationele resultaten: in een klantgerichte salesrol bij FitActive sloot ik persoonlijk honderden abonnementen, goed voor een geschatte commerciële waarde van € 80K–€ 100K. Daarvoor ondersteunde ik een high-profile cliënt in een vertrouwelijke, high-security omgeving verbonden aan het nationale inlichtingennetwerk, waar ik gevoelige logistiek en meertalige communicatie met absolute discretie afhandelde.
+▪ Leiderschap: ik richtte VISIONOIR op en gaf er leiding aan, een creatief ecosysteem voor branding en sound, inclusief contracten, budgetten en een netwerk van multidisciplinaire artiesten. Ik sloot het bewust af om me volledig op Security Operations te richten.
+
+Talen: Italiaans (moedertaal), Engels en Spaans (volledige professionele beheersing), Duits en Frans (basisniveau).
+
+Woonachtig in Bari, Italië. Beschikbaar voor remote werk en bereid te verhuizen voor internationale kansen in cybersecurity, technologie, business, sales, marketing en creatieve rollen, inclusief graduate programmes en stages.
+
+Portfolio: flaviogiorgioguarini.github.io
+GitHub: github.com/FlavioGiorgioGuarini
+TryHackMe: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+<h2>Experience</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">64<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Receptiemedewerker — Verkoop van abonnementen en klantacquisitie</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">FitActive · Fitness Bari Japigia S.r.l.</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Fulltime</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">mei 2026 – heden</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Apulië, Italië · Op locatie</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">932<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Klantgerichte commerciële rol met verantwoordelijkheid voor acquisitie, conversie en retentie bij een fitnessclub, met meetbare verkoopresultaten.
+
+▪ Honderden abonnementen verkocht, goed voor een geschatte totale commerciële waarde van € 80.000–€ 100.000 uit persoonlijk gesloten deals.
+▪ Beheer van de volledige acquisitiefunnel: informatie over diensten en abonnementen, promotionele verkoop, nieuwe inschrijvingen en verlengingen.
+▪ Afhandeling van inkomende contacten via telefoon en WhatsApp, inplannen van afspraken en systematische opvolging van leadlijsten om de conversie te maximaliseren.
+▪ Administratieve werkzaamheden: invoeren van klantgegevens, incasseren van betalingen, bijwerken van de database en uitgeven van documenten, volledig conform de bedrijfsprocedures en de regelgeving rond veiligheid en privacy.
+
+Vaardigheden: Sales · Klantacquisitie · Leadconversie · Klantenservice · Data-entry · Privacy compliance</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">78<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Personal Assistant — Vertrouwelijke cliënt (overheids- / inlichtingenomgeving)</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Vertrouwelijke cliënt</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Contract</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">jul. 2024 – dec. 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rome, Lazio, Italië · Op locatie</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">637<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Operationele ondersteuning van een high-profile cliënt verbonden aan het nationale inlichtingennetwerk.
+
+▪ Beheer van gevoelige logistiek en meertalige communicatie (Italiaans, Engels, Spaans) met absolute discretie.
+▪ Dagelijks werkzaam in een high-security, privacykritische omgeving onder strikte geheimhoudingsprotocollen.
+▪ Hier bouwde ik de operationele discipline, situational awareness en betrouwbaarheid op die nu de basis vormen van mijn securitywerk.
+
+Verdere details worden om redenen van vertrouwelijkheid niet gedeeld.
+
+Vaardigheden: Vertrouwelijkheid · Gevoelige logistiek · Meertalige communicatie · Operationele security</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">33<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Oprichter en Uitvoerend Directeur</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">VISIONOIR</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Zelfstandige</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">mei 2025 – nov. 2025</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italië · Remote</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">362<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Oprichting en leiding van een creatief ecosysteem voor branding en sound.
+
+▪ Beheer van contracten, budgetten en een netwerk van multidisciplinaire artiesten.
+▪ Het project succesvol afgesloten uit strategische keuze, om me volledig op Security Operations te richten.
+
+Vaardigheden: Ondernemerschap · Branding · Budgetbeheer · Contractbeheer · Creatieve directie</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">28<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Sound Designer en Bètatester</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">nov. 2019 – heden</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Remote</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">292<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Official Ableton Live Beta Tester (Suite 12.3): testen van pre-release builds en rapporteren van issues aan het ontwikkelteam.
+▪ Gespecialiseerd in MPE-technologie, elektronische compositie en integratie van audiohardware.
+
+Vaardigheden: Ableton Live · Sound design · Software testing · MPE</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">24<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Oprichter en Coördinator</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Adhuna Collective</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Zelfstandige</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">dec. 2023 – jul. 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Italië</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">178<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Organisatie van mindfulness- en soundretraites.
+▪ Productie van &quot;The Methe Resort Experience&quot; (mei 2024).
+
+Vaardigheden: Evenementenproductie · Coördinatie · Community building</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">28<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Privédocent Engels en Spaans</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Zelfstandige</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Zelfstandige</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">dec. 2023 – apr. 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Bari, Italië · Hybride</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">211<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Individuele lessen aan studenten van verschillende niveaus, gericht op conversatie, uitspraak en woordenschat voor academische en professionele contexten.
+
+Vaardigheden: Lesgeven · Engels · Spaans · Communicatie</pre></div>
+</article>
+<h2>Education</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Bachelor (Laurea), Informatica-engineering (L-8)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">mrt. 2026 – 2027 (verwacht)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rome, Italië</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">240<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Versneld traject. Curriculum met engineeringfocus: programmeren, data engineering, netwerken, software engineering, cybersecurity en automatisering, afgestemd op de GII-, IEEE- en ACM-standaarden voor het ontwerp en beheer van ICT-systemen.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Bachelor (Laurea), Communicatie &amp; Multimedia (L-20)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">sep. 2025 – 2027 (verwacht)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Rome, Italië</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">237<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Versneld traject. Interdisciplinair programma in semiotiek, sociologie en digitaal recht: analyse van menselijk gedrag in samenhang met digitale systemen, toegepast op verdediging tegen social engineering en op Strategische Communicatie.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">33<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">The American School of Las Palmas</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Amerikaans highschooldiploma</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2022 – 2023</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Las Palmas, Spanje</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">168<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Activiteiten en prestaties: keynote speaker in het Auditorium Alfredo Kraus (400+ aanwezigen) · Prom King 2022/23 · Eco-Council Member Badge · 80 uur vrijwilligerswerk.</pre></div>
+</article>
+<h2>Licenses &amp; Certifications</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">48<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Advent of Cyber 2025 — Certificate of Completion</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Issued</span><span class="mv">2025</span></div>
+<div class="meta"><span class="mk">Credential URL</span><span class="mv">(plak hier de link naar het certificaat uit je TryHackMe-profiel)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">303<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Intensieve challenge van 24 dagen. SOC / Blue Team: loganalyse met Splunk, signature matching met YARA, phishinganalyse. Cloud &amp; Forensics: AWS IAM-concepten, hardening van Docker-containers, sandboxes voor malwareanalyse. Red Team: web exploitation (XSS, IDOR) en verdediging tegen AI prompt injection.</pre></div>
+</article>
+<h2>Courses</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">53<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Python for Security — Scripting &amp; Automation Training</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">nov. 2025 – heden (lopend)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">86<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Basiscursussen over syntaxis en automatiseringslogica, gericht op security operations.</pre></div>
+</article>
+<h2>Projects</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">42<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">CSF SIEM 3D v2.0 — Cybersecurity Framework</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">jan. 2026 – heden</span></div>
+<div class="meta"><span class="mk">URL</span><span class="mv">https://github.com/FlavioGiorgioGuarini/cybersecurity-homelab</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">602<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Open source Security Information &amp; Event Management (SIEM)-framework met een realtime 3D-holografisch dashboard, in actieve ontwikkeling.
+
+▪ Backend: FastAPI, PostgreSQL en SQLAlchemy ORM met 15+ REST-endpoints voor threat-ingestie, statistieken en dashboardmetrieken.
+▪ 8 geïntegreerde securitymodules: core, SOC, threat intelligence, netwerk, offensief, defensief, forensics en web security, elk met eigen testsuites.
+▪ Frontend: 3D-scène in Three.js, live grafieken met Chart.js, threattabel die automatisch ververst.
+▪ Gecontaineriseerd met Docker en docker-compose. Codebase: Python 74%, HTML 26%.</pre></div>
+</article>
+<h2>Honors &amp; Awards</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">29<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Top 3% wereldwijd — TryHackMe</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2026</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">133<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Wereldwijde rank 54.086 · Level 0xA (Wizard) · 148 rooms afgerond · 31 badges. Openbaar profiel: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">60<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Bronzen medaille — 200 m vlinderslag, Infantil Championships</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">Infantil Championships, Tenerife</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2019</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">28<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Wedstrijdzwemmer sinds 2003.</pre></div>
+</article>
+</section><section class="panel" data-lang="ru" hidden>
+<h2>Name</h2>
+<div class="field"><div class="fhead"><span class="flabel">Name</span><span class="count">47<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Flavio Giorgio Guarini (Флавио Джорджо Гуарини)</pre></div>
+<h2>Headline</h2>
+<div class="field"><div class="fhead"><span class="flabel">Headline</span><span class="count">217<span class="lim">/220</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Junior Cybersecurity Analyst | SOC · киберразведка · OSINT · автоматизация на Python | Топ-3% в мире на TryHackMe | Human-Centric Security × стратегические коммуникации | IT · EN · ES | Открыт к международным проектам</pre></div>
+<h2>About</h2>
+<div class="field"><div class="fhead"><span class="flabel">About</span><span class="count">2468<span class="lim">/2600</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Я работаю на стыке кибербезопасности и наук о коммуникации: защищаю системы, понимая и тех, кто ими пользуется, и тех, кто на них нападает.
+
+Я Junior Cybersecurity Analyst с практической базой в Security Operations, киберразведке (Threat Intelligence), анализе сетевого трафика и автоматизации на Python; вхожу в топ-3% пользователей TryHackMe в мире (148 пройденных комнат, 31 бейдж). Параллельно получаю две степени бакалавра в Universitas Mercatorum в Риме — по компьютерной инженерии и по коммуникациям и мультимедиа. Это позволяет мне соединять технические меры защиты с семиотикой, социологией и цифровым правом и противодействовать социальной инженерии в её человеческом корне.
+
+Что я приношу команде
+▪ Техническая безопасность: основы SOC и Blue Team (анализ логов в Splunk, сигнатурный анализ на YARA, разбор фишинга), OSINT, анализ сетей, Kali Linux Purple, Flipper Zero, принципы веб-эксплуатации (XSS, IDOR) и защита от prompt injection в системах ИИ.
+▪ Инженерия: разрабатываю и поддерживаю CSF SIEM 3D — open-source-платформу класса Security Information &amp; Event Management с бэкендом на FastAPI и PostgreSQL, 8 интегрированными модулями безопасности и 3D-дашбордом реального времени на Three.js.
+▪ Human intelligence: семиотика, социология и поведенческий анализ в приложении к Human-Centric Security и стратегическим коммуникациям.
+▪ Коммерческие и операционные результаты: в клиентской роли продаж в FitActive я лично закрыл сотни абонементов, обеспечив коммерческую ценность порядка €80K–€100K. Ранее сопровождал статусного клиента в закрытой среде повышенной безопасности, связанной с национальной разведывательной сетью: отвечал за чувствительную логистику и многоязычные коммуникации при абсолютной конфиденциальности.
+▪ Лидерство: основал и возглавлял VISIONOIR — креативную экосистему брендинга и звука, управлял договорами, бюджетами и сетью мультидисциплинарных артистов, после чего осознанно закрыл проект, чтобы полностью сосредоточиться на Security Operations.
+
+Языки: итальянский (родной), английский и испанский (свободное профессиональное владение), немецкий и французский (базовый уровень).
+
+Живу в Бари, Италия. Готов к удалённой работе и релокации ради международных возможностей в кибербезопасности, технологиях, бизнесе, продажах, маркетинге и креативных ролях, включая graduate-программы и стажировки.
+
+Портфолио: flaviogiorgioguarini.github.io
+GitHub: github.com/FlavioGiorgioGuarini
+TryHackMe: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+<h2>Experience</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">67<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Администратор ресепшен — продажа абонементов и привлечение клиентов</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">FitActive · Fitness Bari Japigia S.r.l.</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Полная занятость</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">май 2026 – настоящее время</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Бари, Апулия, Италия · Офис</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">894<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Коммерческая роль в прямом контакте с клиентом: привлечение, конверсия и удержание клиентов фитнес-клуба с измеримыми результатами продаж.
+
+▪ Продал сотни абонементов, что дало суммарную коммерческую ценность порядка €80 000–€100 000 по лично закрытым сделкам.
+▪ Вёл полную воронку привлечения: консультирование по услугам и абонементам, промо-продажи, новые регистрации и продления.
+▪ Обрабатывал входящие обращения по телефону и в WhatsApp, назначал встречи и системно вёл follow-up по спискам лидов для максимальной конверсии.
+▪ Административные операции: внесение данных клиентов, приём платежей, обновление базы данных и оформление документов в полном соответствии с корпоративными процедурами и нормами безопасности и защиты персональных данных.
+
+Навыки: Продажи · Привлечение клиентов · Конверсия лидов · Клиентский сервис · Работа с данными · Соблюдение требований к персональным данным</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">85<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Личный ассистент — конфиденциальный клиент (государственная / разведывательная среда)</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Конфиденциальный клиент</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Контракт</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">июль 2024 – дек. 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Рим, Лацио, Италия · Офис</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">683<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Операционная поддержка статусного клиента, связанного с национальной разведывательной сетью.
+
+▪ Управлял чувствительной логистикой и многоязычными коммуникациями (итальянский, английский, испанский) при абсолютной конфиденциальности.
+▪ Ежедневно работал в среде повышенной безопасности, критичной с точки зрения приватности, по строгим протоколам неразглашения.
+▪ Выработал операционную дисциплину, ситуационную осведомлённость и надёжность, на которые сегодня опирается моя работа в безопасности.
+
+Дополнительные детали не раскрываются по соображениям конфиденциальности.
+
+Навыки: Конфиденциальность · Чувствительная логистика · Многоязычные коммуникации · Операционная безопасность</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">36<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Основатель и исполнительный директор</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">VISIONOIR</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Самозанятость</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">май 2025 – нояб. 2025</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Италия · Удалённо</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">352<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Основал и возглавил креативную экосистему брендинга и звука.
+
+▪ Управлял договорами, бюджетами и сетью мультидисциплинарных артистов.
+▪ Успешно закрыл проект по стратегическому решению, чтобы полностью сосредоточиться на Security Operations.
+
+Навыки: Предпринимательство · Брендинг · Управление бюджетом · Управление договорами · Креативное руководство</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">28<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Саунд-дизайнер и бета-тестер</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Фриланс</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">нояб. 2019 – настоящее время</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Удалённо</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">286<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Официальный бета-тестер Ableton Live (Suite 12.3): тестирование предрелизных сборок и передача отчётов об ошибках команде разработки.
+▪ Специализация на технологии MPE, электронной композиции и интеграции аудиооборудования.
+
+Навыки: Ableton Live · Саунд-дизайн · Тестирование ПО · MPE</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">24<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Основатель и координатор</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Adhuna Collective</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Самозанятость</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">дек. 2023 – июль 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Италия</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">199<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Организовывал ретриты по практикам осознанности и работе со звуком.
+▪ Спродюсировал &quot;The Methe Resort Experience&quot; (май 2024).
+
+Навыки: Продюсирование мероприятий · Координация · Развитие сообщества</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">46<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Частный преподаватель английского и испанского</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Самозанятость</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">Самозанятость</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">дек. 2023 – апр. 2024</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Бари, Италия · Гибридный формат</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">226<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Индивидуальные занятия со студентами разного уровня с акцентом на разговорную практику, произношение и лексику для академической и профессиональной среды.
+
+Навыки: Преподавание · Английский язык · Испанский язык · Коммуникация</pre></div>
+</article>
+<h2>Education</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Бакалавр (Laurea), компьютерная инженерия (L-8)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">март 2026 – 2027 (ожидается)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Рим, Италия</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">240<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Ускоренная программа. Инженерный учебный план: программирование, инженерия данных, сети, программная инженерия, кибербезопасность и автоматизация — в соответствии со стандартами GII, IEEE и ACM для проектирования и управления ИКТ-системами.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Бакалавр (Laurea), коммуникации и мультимедиа (L-20)</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">сент. 2025 – 2027 (ожидается)</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Рим, Италия</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">228<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Ускоренная программа. Междисциплинарный курс по семиотике, социологии и цифровому праву: анализ человеческого поведения в связке с цифровыми системами, применённый к защите от социальной инженерии и стратегическим коммуникациям.</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">33<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">The American School of Las Palmas</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">Диплом об окончании средней школы США</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2022 – 2023</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">Лас-Пальмас, Испания</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">172<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Активности и достижения: основной докладчик в Auditorium Alfredo Kraus (более 400 участников) · Prom King 2022/23 · Eco-Council Member Badge · 80 часов волонтёрской работы.</pre></div>
+</article>
+<h2>Licenses &amp; Certifications</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">48<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Advent of Cyber 2025 — Certificate of Completion</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Issued</span><span class="mv">2025</span></div>
+<div class="meta"><span class="mk">Credential URL</span><span class="mv">(вставьте ссылку на сертификат из вашего профиля TryHackMe)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">308<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Интенсив продолжительностью 24 дня. SOC / Blue Team: анализ логов в Splunk, сигнатурный анализ на YARA, разбор фишинга. Cloud &amp; Forensics: принципы AWS IAM, харденинг контейнеров Docker, песочницы для анализа вредоносного ПО. Red Team: веб-эксплуатация (XSS, IDOR) и защита от prompt injection в системах ИИ.</pre></div>
+</article>
+<h2>Courses</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">53<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Python for Security — Scripting &amp; Automation Training</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">нояб. 2025 – настоящее время (в процессе)</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">104<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Базовые курсы по синтаксису и логике автоматизации, ориентированные на задачи операционной безопасности.</pre></div>
+</article>
+<h2>Projects</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">42<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">CSF SIEM 3D v2.0 — Cybersecurity Framework</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">янв. 2026 – настоящее время</span></div>
+<div class="meta"><span class="mk">URL</span><span class="mv">https://github.com/FlavioGiorgioGuarini/cybersecurity-homelab</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">627<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Open-source-платформа класса Security Information &amp; Event Management (SIEM) с голографическим 3D-дашбордом реального времени, в активной разработке.
+
+▪ Бэкенд: FastAPI, PostgreSQL и SQLAlchemy ORM, более 15 REST-эндпоинтов для приёма данных об угрозах, статистики и метрик дашборда.
+▪ 8 интегрированных модулей безопасности: core, SOC, threat intelligence, сетевой, наступательный, защитный, forensics и web security — с отдельными наборами тестов.
+▪ Фронтенд: 3D-сцена на Three.js, живые графики на Chart.js, таблица угроз с автообновлением.
+▪ Контейнеризация через Docker и docker-compose. Кодовая база: Python 74%, HTML 26%.</pre></div>
+</article>
+<h2>Honors &amp; Awards</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">25<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Топ-3% в мире — TryHackMe</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2026</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">137<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Глобальный ранг 54 086 · Уровень 0xA (Wizard) · 148 пройденных комнат · 31 бейдж. Публичный профиль: tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">59<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Бронзовая медаль — 200 м баттерфляй, Infantil Championships</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">Infantil Championships, Tenerife</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2019</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">32<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Спортивное плавание с 2003 года.</pre></div>
+</article>
+</section><section class="panel" data-lang="zh" hidden>
+<h2>Name</h2>
+<div class="field"><div class="fhead"><span class="flabel">Name</span><span class="count">35<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Flavio Giorgio Guarini（弗拉维奥·乔治·瓜里尼）</pre></div>
+<h2>Headline</h2>
+<div class="field"><div class="fhead"><span class="flabel">Headline</span><span class="count">146<span class="lim">/220</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Junior Cybersecurity Analyst 初级网络安全分析师 | 安全运营 SOC · 威胁情报 · 开源情报 OSINT · Python 自动化 | TryHackMe 全球前 3% | 以人为本的安全 × 战略传播 | 意大利语 · 英语 · 西班牙语 | 寻求国际机会</pre></div>
+<h2>About</h2>
+<div class="field"><div class="fhead"><span class="flabel">About</span><span class="count">1050<span class="lim">/2600</span></span><button class="copy" type="button">Copy</button></div><pre class="val">我的工作处在网络安全与传播学的交叉点：通过理解使用系统的人与攻击系统的人来守护系统。
+
+我是一名 Junior Cybersecurity Analyst（初级网络安全分析师），在安全运营、威胁情报、网络分析与 Python 自动化方面拥有扎实的实操基础，在 TryHackMe 位列全球前 3%（完成 148 个 room，获得 31 枚徽章）。我正在罗马的 Universitas Mercatorum 并行攻读两个学位：计算机工程学士与传播及多媒体学士。这一双轨路径让我能够把技术管控与符号学、社会学、数字法结合起来，从「人」这一根源上对抗社会工程攻击。
+
+我能带来什么
+▪ 技术安全：SOC 与蓝队基础能力（Splunk 日志分析、YARA 特征匹配、钓鱼邮件分析）、开源情报 OSINT、网络分析、Kali Linux Purple、Flipper Zero、Web 漏洞利用概念（XSS、IDOR），以及针对 AI 提示词注入的防御。
+▪ 工程能力：我开发并维护 CSF SIEM 3D，一个开源的安全信息与事件管理框架，采用 FastAPI 与 PostgreSQL 后端，集成 8 个安全模块，并配备基于 Three.js 构建的实时 3D 可视化仪表盘。
+▪ 人因情报：把符号学、社会学与行为分析应用于以人为本的安全（Human-Centric Security）与战略传播。
+▪ 商业与运营成果：在 FitActive 直接面向客户的销售岗位上，我个人成交数百份会员合约，创造约 80,000–100,000 欧元（8 万–10 万欧元）的商业价值。此前，我曾在与国家情报体系相关的高度保密环境中为一位重要客户提供支持，以绝对审慎的态度处理敏感后勤事务与多语言沟通。
+▪ 领导力：我创立并领导 VISIONOIR，一个品牌与声音创意生态项目，负责合同、预算以及多学科艺术家网络的管理；随后主动结束该项目，以全身心投入安全运营领域。
+
+语言：意大利语（母语）、英语与西班牙语（专业工作精通）、德语与法语（入门）。
+
+常驻意大利巴里。可远程协作，并愿意为网络安全、科技、商业、销售、市场与创意类的国际机会（含毕业生培养计划与实习）迁往海外。
+
+作品集：flaviogiorgioguarini.github.io
+GitHub：github.com/FlavioGiorgioGuarini
+TryHackMe：tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+<h2>Experience</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">16<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">前台接待 — 会员销售与客户获取</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">FitActive · Fitness Bari Japigia S.r.l.</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">全职</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2026年5月 – 至今</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">意大利普利亚大区巴里 · 现场办公</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">283<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">面向客户的商业岗位，负责健身俱乐部的客户获取、成交转化与会员留存，销售业绩可量化。
+
+▪ 销售数百份会员合约，个人独立成交部分累计创造约 80,000–100,000 欧元（8 万–10 万欧元）的商业价值。
+▪ 管理完整获客漏斗：服务与会员方案讲解、促销销售、新会员签约与续费。
+▪ 处理电话与 WhatsApp 的来访咨询，安排预约，并对潜在客户名单进行系统化跟进，以最大化转化率。
+▪ 行政运营：客户资料录入、款项收取、数据库更新与单据开具，全面遵守公司流程及安全与隐私法规。
+
+技能：销售 · 客户获取 · 线索转化 · 客户服务 · 数据录入 · 隐私合规</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">20<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">私人助理 — 保密客户（政府/情报环境）</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">保密客户</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">合同制</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2024年7月 – 2024年12月</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">意大利拉齐奥大区罗马 · 现场办公</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">182<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">为一位与国家情报体系相关的重要客户提供运营支持。
+
+▪ 以绝对审慎的态度处理敏感后勤事务与多语言沟通（意大利语、英语、西班牙语）。
+▪ 在高安全等级、隐私高度敏感的环境中依照严格保密协议开展日常工作。
+▪ 由此建立的运营纪律、态势感知与可靠性，正是我今日安全工作的基石。
+
+其余细节因保密要求不便披露。
+
+技能：保密意识 · 敏感后勤 · 多语言沟通 · 运营安全</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">8<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">创始人兼执行董事</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">VISIONOIR</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">自主创业</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2025年5月 – 2025年11月</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">意大利 · 远程</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">114<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">创立并领导一个聚焦品牌与声音的创意生态项目。
+
+▪ 负责合同、预算以及多学科艺术家网络的管理。
+▪ 出于战略选择顺利结束该项目，以全身心投入安全运营领域。
+
+技能：创业管理 · 品牌建设 · 预算管理 · 合同管理 · 创意总监</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">15<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">声音设计师兼 Beta 测试员</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Freelance</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">自由职业</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2019年11月 – 至今</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">远程</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">122<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ Ableton Live 官方 Beta 测试员（Suite 12.3）：测试预发布版本并向开发团队反馈问题。
+▪ 专注于 MPE 技术、电子音乐创作与音频硬件集成。
+
+技能：Ableton Live · 声音设计 · 软件测试 · MPE</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">7<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">创始人兼协调人</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">Adhuna Collective</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">自主创业</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2023年12月 – 2024年7月</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">意大利</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">84<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">▪ 策划并组织正念与声音静修活动。
+▪ 制作「The Methe Resort Experience」（2024年5月）。
+
+技能：活动制作 · 统筹协调 · 社群运营</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">11<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">英语与西班牙语私人教师</pre></div>
+<div class="meta"><span class="mk">Company</span><span class="mv">自主执业</span></div>
+<div class="meta"><span class="mk">Employment type</span><span class="mv">自主创业</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2023年12月 – 2024年4月</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">意大利巴里 · 混合办公</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">67<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">面向不同水平学员的一对一课程，重点提升学术与职场场景下的口语表达、发音与词汇运用。
+
+技能：教学 · 英语 · 西班牙语 · 沟通表达</pre></div>
+</article>
+<h2>Education</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">计算机工程学士（Laurea，L-8）</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2026年3月 – 2027年（预计）</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">意大利罗马</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">80<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">加速学制。以工程为核心的课程体系：程序设计、数据工程、网络、软件工程、网络安全与自动化，对标 GII、IEEE 与 ACM 关于 ICT 系统设计与管理的标准。</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">22<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Universitas Mercatorum</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">传播与多媒体学士（Laurea，L-20）</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2025年9月 – 2027年（预计）</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">意大利罗马</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">56<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">加速学制。跨学科项目，涵盖符号学、社会学与数字法：将人类行为分析与数字系统相结合，应用于社会工程防御与战略传播。</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">33<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">The American School of Las Palmas</pre></div>
+<div class="meta"><span class="mk">Degree</span><span class="mv">美国高中文凭</span></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2022年 – 2023年</span></div>
+<div class="meta"><span class="mk">Location</span><span class="mv">西班牙拉斯帕尔马斯</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">116<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">活动与荣誉：在 Auditorium Alfredo Kraus 担任主旨演讲嘉宾（400+ 名观众） · 2022/23 学年 Prom King · Eco-Council Member Badge · 80 小时社区志愿服务。</pre></div>
+</article>
+<h2>Licenses &amp; Certifications</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">48<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Advent of Cyber 2025 — Certificate of Completion</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Issued</span><span class="mv">2025年</span></div>
+<div class="meta"><span class="mk">Credential URL</span><span class="mv">（请从你的 TryHackMe 个人主页粘贴证书链接）</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">133<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">为期 24 天的高强度挑战。SOC / 蓝队方向：Splunk 日志分析、YARA 特征匹配、钓鱼邮件分析。云与取证方向：AWS IAM 概念、Docker 容器加固、恶意软件分析沙箱。红队方向：Web 漏洞利用（XSS、IDOR）以及针对 AI 提示词注入的防御。</pre></div>
+</article>
+<h2>Courses</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">53<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">Python for Security — Scripting &amp; Automation Training</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2025年11月 – 至今（进行中）</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">20<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">面向安全运营的语法与自动化逻辑基础课程。</pre></div>
+</article>
+<h2>Projects</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">42<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">CSF SIEM 3D v2.0 — Cybersecurity Framework</pre></div>
+<div class="meta"><span class="mk">Dates</span><span class="mv">2026年1月 – 至今</span></div>
+<div class="meta"><span class="mk">URL</span><span class="mv">https://github.com/FlavioGiorgioGuarini/cybersecurity-homelab</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">287<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">开源的安全信息与事件管理（SIEM）框架，配备实时 3D 全息可视化仪表盘，目前处于活跃开发中。
+
+▪ 后端：FastAPI、PostgreSQL 与 SQLAlchemy ORM，提供 15+ 个 REST 接口，用于威胁数据接入、统计与仪表盘指标。
+▪ 集成 8 个安全模块：核心、SOC、威胁情报、网络、攻击、防御、取证与 Web 安全，并配有专属测试套件。
+▪ 前端：Three.js 三维场景、Chart.js 实时图表、自动刷新的威胁列表。
+▪ 使用 Docker 与 docker-compose 完成容器化。代码构成：Python 74%、HTML 26%。</pre></div>
+</article>
+<h2>Honors &amp; Awards</h2>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">18<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">全球前 3% — TryHackMe</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">TryHackMe</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2026年</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">95<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">全球排名 54,086 · 等级 0xA（Wizard） · 完成 148 个 room · 31 枚徽章。公开主页：tryhackme.com/p/FlavioGiorgioGuarini</pre></div>
+</article>
+<article class="entry">
+<div class="field"><div class="fhead"><span class="flabel">Title</span><span class="count">35<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">铜牌 — 200 米蝶泳，Infantil Championships</pre></div>
+<div class="meta"><span class="mk">Issuer</span><span class="mv">Infantil Championships, Tenerife</span></div>
+<div class="meta"><span class="mk">Date</span><span class="mv">2019年</span></div>
+<div class="field"><div class="fhead"><span class="flabel">Description</span><span class="count">16<span class="lim">/2000</span></span><button class="copy" type="button">Copy</button></div><pre class="val">自 2003 年起从事竞技游泳。</pre></div>
+</article>
+</section>
+<section class="panel" data-lang="shared" hidden><h2>Shared across all languages</h2><div class="shared"># Shared sections (language-independent on LinkedIn)
+
+LinkedIn secondary-language profiles only localise **Name, Headline, About, Experience and Education**. The sections below are stored once and shown to every visitor, so they are written in English (the lingua franca for recruiters) with tool names kept as-is.
+
+## Custom public URL
+`linkedin.com/in/flaviogiorgioguarini`
+Fallbacks if taken: `flavio-giorgio-guarini`, `flaviogguarini`.
+
+## Profile photo (guidance, nothing to generate)
+- Head-and-shoulders, neutral or dark plain background, direct eye contact, natural light, no sunglasses or hat.
+- Face fills roughly 60% of the frame; square crop, at least 800×800 px.
+- Plain shirt or jacket in a solid colour that contrasts with the background. No gym or nightlife setting.
+
+## Banner
+Ready-made file: `linkedin/assets/linkedin-banner-1584x396.png` (LinkedIn&#x27;s native size, 1584×396 px). It carries name, role, the three expertise axes and the TryHackMe Top 3% figure. Upload via *Edit background photo*.
+
+## Featured (pin in this order)
+1. **Portfolio** — https://flaviogiorgioguarini.github.io — title: &quot;Portfolio — Flavio Giorgio Guarini&quot;
+2. **CSF SIEM 3D v2.0 (GitHub)** — https://github.com/FlavioGiorgioGuarini/cybersecurity-homelab — title: &quot;CSF SIEM 3D v2.0 — open-source SIEM with FastAPI backend and 3D dashboard&quot;
+3. **TryHackMe profile** — https://tryhackme.com/p/FlavioGiorgioGuarini — title: &quot;TryHackMe — Top 3% global, 148 rooms, 31 badges&quot;
+4. **Advent of Cyber 2025 certificate** — paste the certificate link from TryHackMe
+
+## Skills (add in this order; pin the first 5 as Top Skills)
+Top 5 (pinned)
+1. Cybersecurity
+2. Security Operations (SOC)
+3. Threat Intelligence
+4. OSINT
+5. Python
+
+Technical security
+- Network Analysis
+- Log Analysis
+- Splunk
+- YARA
+- Phishing Analysis
+- Kali Linux
+- Web Application Security
+- Malware Analysis
+- Digital Forensics
+- Security Automation
+- Flipper Zero
+- Social Engineering Defense
+- Human-Centric Security
+- AWS IAM
+
+Software engineering
+- FastAPI
+- PostgreSQL
+- SQLAlchemy
+- REST APIs
+- Docker
+- JavaScript
+- Three.js
+- Git / GitHub
+- Software Testing
+
+Human intelligence and communication
+- Semiotics
+- Sociology
+- Digital Law
+- Strategic Communication
+- Behavioural Analysis
+- Public Speaking
+- Multilingual Communication
+
+Business and operations
+- Sales
+- Customer Acquisition
+- Lead Generation
+- Customer Service
+- Entrepreneurship
+- Budget Management
+- Contract Management
+- Event Production
+- Confidentiality
+- Teaching
+
+Creative
+- Sound Design
+- Ableton Live
+- Branding
+- Creative Direction
+
+## Languages (LinkedIn &quot;Languages&quot; section)
+| Language | Proficiency (LinkedIn scale) |
+|---|---|
+| Italian | Native or bilingual proficiency |
+| English | Full professional proficiency |
+| Spanish | Full professional proficiency |
+| German | Elementary proficiency |
+| French | Elementary proficiency |
+
+## Open to work (recruiter-only setting recommended)
+- Job titles: Junior Cybersecurity Analyst · SOC Analyst · Threat Intelligence Analyst · Security Analyst Intern · Junior Penetration Tester · Business Development Representative · Sales Development Representative · Marketing Associate · Graduate Programme
+- Location types: Remote · Hybrid · On-site
+- Locations: Italy · Spain · United Kingdom · Germany · Netherlands · France · Switzerland · Ireland · United States · Remote (EMEA)
+- Start date: Actively applying
+- Employment types: Full-time · Internship · Contract
+
+## Contact info
+- Email: guariniflavio@gmail.com
+- Phone: +39 349 544 6488 (visible to connections only)
+- Website: https://flaviogiorgioguarini.github.io (type: Portfolio)
+- Birthday / address: leave hidden
+
+## Location and industry
+- Location: Bari, Apulia, Italy
+- Industry: Computer and Network Security
+
+## Interests to follow (SEO signal for cyber recruiters)
+TryHackMe · Hack The Box · SANS Institute · OWASP · MITRE ATT&amp;CK · Kali Linux · Splunk · ENISA · Clusit
+</div></section>
+</div>
+<script>
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
+  document.querySelectorAll('.panel').forEach(p=>p.hidden=p.dataset.lang!==t.dataset.lang);
+  try{localStorage.setItem('lk-lang',t.dataset.lang)}catch(e){}
+}));
+try{const s=localStorage.getItem('lk-lang');const b=s&&document.querySelector('.tab[data-lang="'+s+'"]');if(b)b.click()}catch(e){}
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+  const txt=b.closest('.field').querySelector('.val').textContent;
+  try{await navigator.clipboard.writeText(txt);b.textContent='Copied';b.classList.add('done');setTimeout(()=>{b.textContent='Copy';b.classList.remove('done')},1500)}
+  catch(e){b.textContent='Select text';}
+}));
+</script>
